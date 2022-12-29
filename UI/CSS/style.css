@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fcfcfc;
+  font-family: "Poppins";
+}
+
+nav {
+  margin-top: 1rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+}
+nav ul a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000;
+  gap: 3rem;
+  font-weight: 500;
+}
+nav ul a:hover {
+  border-bottom: 2px solid #000;
+}
+.registration {
+  margin-left: 3rem;
+}
+.hire {
+  margin-left: 3rem;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #000;
+  width: 8rem;
+  height: 2rem;
+  text-align: center;
+  border-radius: 0.2rem;
+}
+
+.hire:hover {
+  background-color: #fcc028;
+  color: #fff;
+  border: none;
+  transform: translateY(-3px);
+  transition: all 0.4s;
+}
+.hire:hover::after {
+  transform: scaleX(0.2) scaleY(1.6);
+}
+.hamburger .bar {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media screen and (max-width: 820px) {
+  .home {
+    display: none;
+  }
+  .hamburger {
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    left: 90%;
+    top: 50%;
+  }
+  .hamburger .bar,
+  .hamburger:after,
+  .hamburger:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: rgb(51, 66, 105);
+    margin: 6px 0px;
+    transition: 0.4s;
+    z-index: 9999;
+  }
+  .hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+  }
+  .hamburger.is-active:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+  }
+  .hamburger.is-active .bar {
+    opacity: 0;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 98;
+    padding-top: 120px;
+    transition: 0.4s;
+  }
+  .mobile-nav.is-active {
+    left: 100%;
+  }
+  .mobile-nav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background-color: rgb(88, 156, 145);
+    color: #fff;
+  }
+  .mobile-nav a:hover {
+    background-color: rgb(9, 66, 57);
+  }
+  .registration{
+    margin-left: 0;
+  }
+    .hire {
+      margin-left: 3rem;
+      text-decoration: none;
+      color: #f7e2fd !important;
+      background-color: #2e382e !important;
+      border: none;
+      width: 100%;
+      height: 3.1rem;
+      text-align: center;
+      border-radius: 0.2rem;
+    }
+  
+    .hire:hover {
+      background-color: #fcc028 !important;
+      color: #fff;
+      border: none;
+      transform: translateY(-3px);
+      transition: all 0.4s;
+    }
+  
+    .hire:hover::after {
+      transform: scaleX(0.2) scaleY(1.6);
+    }
+}
