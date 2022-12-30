@@ -9,11 +9,7 @@ body {
   background-color: #fcfcfc;
   font-family: "Poppins";
 }
-header {
-  /* width: 100%;
-  height: 100%; */
 
-}
 nav {
   padding: 1rem;
   display: flex;
@@ -203,7 +199,6 @@ nav ul a:hover {
 .about-container {
   width: 65%;
   margin: auto;
- 
 }
 .about-download {
   display: flex;
@@ -243,7 +238,7 @@ nav ul a:hover {
   top: 0;
   left: 0;
 }
-@media screen and (max-width:360px) {
+@media screen and (max-width: 360px) {
   .skills {
     margin-top: 32rem;
   }
@@ -264,7 +259,7 @@ nav ul a:hover {
 
 .portfolio {
   width: 100%;
-  padding: 1rem;
+  padding: 5rem;
   height: 35rem;
   top: 0;
   left: 0;
@@ -278,12 +273,128 @@ nav ul a:hover {
 .portfolio-heading {
   color: #207733;
   font-size: 1.8rem;
+  text-transform: uppercase;
 }
 .sawa-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
+
+/* Blog */
+
+.blog-heading {
+  text-align: center;
+  color: #207733;
+  text-transform: uppercase;
+}
+
+.blog {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+
+.blog-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+
+.blog-form-text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.blog-form-text:focus {
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.blog-form-text {
+  resize: none;
+  height: 120px;
+}
+
+.blog-form-btn {
+  border: 0;
+  background: #207733;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.blog-form-btn:hover {
+  background: #051b0a;
+}
+
+/*Contact */
+.contact-heading {
+  text-align: center;
+  color: #207733;
+  text-transform: uppercase;
+}
+
+.contact {
+  width: 100%;
+  height: 35rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+
+.contact-form-text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.contact-form-text:focus {
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.contact-form-text {
+  resize: none;
+  height: 120px;
+}
+
+.contact-form-btn {
+  border: 0;
+  background: #207733;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.contact-form-btn:hover {
+  background: #051b0a;
+}
+
 /* Footer */
 
 footer {
