@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <!-- Homepage -->
@@ -21,8 +25,8 @@
             <a href="#contact">contact me&nbsp;</a>
           </ul>
           <ul class="registration">
-            <a href="#">login&nbsp;</a>
-            <a href="#">sign up</a>
+            <a href="#login">login&nbsp;</a>
+            <a href="#signup">sign up</a>
           </ul>
           <a href="#about" class="hire">hire me</a>
         </nav>
@@ -41,8 +45,8 @@
         <a href="#contact">contact me&nbsp;</a>
       </ul>
       <ul class="registration">
-        <a href="#">login&nbsp;</a>
-        <a href="#">sign up</a>
+        <a href="#login">login&nbsp;</a>
+        <a href="#signup">sign up</a>
       </ul>
       <a href="#about" class="hire">hire me</a>
     </nav>
@@ -138,7 +142,7 @@
           />
           <textarea
             class="blog-form-text"
-            placeholder="Blog Snippet"
+            placeholder="Blog Body"
             required
           ></textarea>
           <input type="submit" class="blog-form-btn" value="Submit" />
@@ -167,14 +171,201 @@
             placeholder="Your Message"
             required
           ></textarea>
-          <input type="submit" class="contact-form-btn" value="Submit" />
+          <input type="submit" class="contact-form-btn" value="Send" />
         </form>
       </div>
     </div>
+
+    <!--Login-->
+    <div class="login" id="login">
+      <h2 class="login-heading">Login here</h2>
+      <div class="login-form">
+        <form class="login-form">
+          <div class="email-form">
+            <div class="image-form">
+              <img
+                src="./Images/envelope.png"
+                alt="Email-logo"
+                class="envelope"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                class="login-form-text-1"
+                placeholder="Email"
+                required
+              />
+            </div>
+          </div>
+          <div class="password-form">
+            <div class="image-form-1">
+              <img
+                src="./Images/password.png"
+                alt="password-logo"
+                class="password-key-image"
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                class="login-form-text-2"
+                placeholder="Password"
+                required
+                id="password"
+              />
+              <span
+                ><i
+                  class="fa fa-eye span-toggle"
+                  aria-hidden="true"
+                  id="eye"
+                  onclick="toggle()"
+                ></i>
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <button class="login-form-btn">
+              Login<span class="btn-char">&#8594;</span>
+            </button>
+          </div>
+        </form>
+        <div class="redirect-links">
+          <a href="#signup" class="create">create account</a>
+          <a href="#forgot" class="forgot">forgot password&#63;</a>
+        </div>
+      </div>
+    </div>
+
+    <!--Forgot-->
+    <div class="forgot" id="forgot">
+      <h2 class="login-heading">Forgot password</h2>
+      <div class="login-form">
+        <form class="login-form">
+          <div class="email-form">
+            <div class="image-form">
+              <img
+                src="./Images/envelope.png"
+                alt="Email-logo"
+                class="envelope"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                class="login-form-text-1"
+                placeholder="Email"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <button class="login-form-btn">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--Sign up-->
+    <div class="signup" id="signup">
+      <h2 class="signup-heading">Sign up here</h2>
+      <div class="signup-form">
+        <form class="signup-form">
+          <div class="user-form">
+            <div class="user-image-form">
+              <img
+                src="./Images/person1.png"
+                alt="user-logo"
+                class="user-image"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                class="signup-form-text-1"
+                placeholder="First Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="user-form">
+            <div class="user-image-form">
+              <img
+                src="./Images/person.png"
+                alt="user-logo"
+                class="user-image"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                class="signup-form-text-1"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="email-form">
+            <div class="image-form">
+              <img
+                src="./Images/envelope.png"
+                alt="Email-logo"
+                class="envelope"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                class="signup-form-text-1"
+                placeholder="Email"
+                required
+              />
+            </div>
+          </div>
+          <div class="password-form">
+            <div class="image-form-1">
+              <img
+                src="./Images/password.png"
+                alt="password-logo"
+                class="password-key-image"
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                class="signup-form-text-2"
+                placeholder="Password"
+                required
+                id="password"
+              />
+              <span
+                ><i
+                  class="fa fa-eye span-toggle"
+                  aria-hidden="true"
+                  id="eye"
+                  onclick="toggle()"
+                ></i>
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <button class="signup-form-btn">
+              Sign up<span class="btn-char">&#8594;</span>
+            </button>
+          </div>
+        </form>
+        <div class="redirect-link">
+          <a href="#login" class="create-login">login here</a>
+        </div>
+      </div>
+    </div>
+
     <!--Footer-->
     <footer>
       <div>
-        <p class="copyright">Copyright &#169; 2022</p>
+        <p class="copyright">&#169;Copyright 2022</p>
       </div>
       <div class="social-medias">
         <img

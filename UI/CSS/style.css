@@ -333,6 +333,8 @@ textarea.blog-form-text {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .blog-form-btn:hover {
@@ -340,7 +342,9 @@ textarea.blog-form-text {
 }
 
 /*Contact */
-.contact-heading {
+.contact-heading,
+.login-heading,
+.signup-heading {
   text-align: center;
   color: #207733;
   text-transform: uppercase;
@@ -349,6 +353,7 @@ textarea.blog-form-text {
 .contact {
   width: 100%;
   height: 35rem;
+  padding: 5rem;
 }
 
 .contact-form {
@@ -389,10 +394,291 @@ textarea.contact-form-text {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .contact-form-btn:hover {
   background: #051b0a;
+}
+
+/* Login */
+.login {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+.login-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+.email-form {
+  position: relative;
+}
+.image-form {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+.envelope {
+  width: 24px;
+  height: 24px;
+}
+
+.login-form-text-1 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.login-form-text-1:focus {
+  box-shadow: 0 0 6px 2px #34495e;
+}
+
+.password-form {
+  position: relative;
+}
+
+.image-form-1 {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+
+.password-key-image {
+  width: 24px;
+  height: 24px;
+}
+
+.login-form-text-2 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.login-form-text-2:focus {
+  box-shadow: 0 0 6px 2px #2f3841;
+}
+
+.span-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+.fa {
+  font-size: 3rem;
+  color: rgba(70, 68, 68, 0.801);
+}
+
+.login-form-btn {
+  border: 1px solid #000;
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.btn-char {
+  font-size: 2rem;
+}
+.login-form-btn:hover {
+  border: 0;
+  background-color: #207733;
+  color: #fff;
+  transition: all 0.5s;
+}
+.redirect-links {
+  padding: 1rem;
+  gap: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.redirect-links a {
+  text-decoration: none;
+}
+.create {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+}
+/*Forgot */
+.forgot {
+  color: #000;
+  text-transform: capitalize;
+}
+#forgot {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+
+/*Sign up */
+.signup {
+  width: 100%;
+  height: 35rem;
+  margin-top: 2rem;
+}
+
+.signup-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+.user-form {
+  position: relative;
+}
+.user-image-form {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+.email-form {
+  position: relative;
+}
+
+.image-form {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+.user-image {
+  width: 24px;
+  height: 24px;
+}
+
+.envelope {
+  width: 24px;
+  height: 24px;
+}
+
+.signup-form-text-1 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.signup-form-text-1:focus {
+  box-shadow: 0 0 6px 2px #34495e;
+}
+
+.password-form {
+  position: relative;
+}
+
+.image-form-1 {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+
+.password-key-image {
+  width: 24px;
+  height: 24px;
+}
+
+.signup-form-text-2 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.signup-form-text-2:focus {
+  box-shadow: 0 0 6px 2px #2f3841;
+}
+
+.span-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.fa {
+  font-size: 3rem;
+  color: rgba(70, 68, 68, 0.801);
+}
+
+.signup-form-btn {
+  border: 1px solid #000;
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-char {
+  font-size: 2rem;
+}
+
+.signup-form-btn:hover {
+  border: 0;
+  background-color: #207733;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.redirect-link {
+  padding: 1rem;
+}
+
+.redirect-link a {
+  text-decoration: none;
+}
+
+.create-login {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /* Footer */
