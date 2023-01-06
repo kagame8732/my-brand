@@ -9,13 +9,7 @@ body {
   background-color: #fcfcfc;
   font-family: "Poppins";
 }
-header {
-  width: 100%;
-  height: 100%;
-  padding: 3rem;
-  justify-content: center;
-  align-content: center;
-}
+
 nav {
   padding: 1rem;
   display: flex;
@@ -116,7 +110,6 @@ nav ul a:hover {
     width: 100%;
     min-height: 100vh;
     z-index: 98;
-    /* padding-top: 120px; */
     transition: 0.4s;
     background-color: #ffffff;
   }
@@ -163,7 +156,11 @@ nav ul a:hover {
   .hire:hover::after {
     transform: scaleX(0.2) scaleY(1.6);
   }
- 
+}
+@media screen and (max-width: 587px) {
+  .about {
+    margin-bottom: 26rem;
+  }
 }
 /* Nav-header */
 .nav-header {
@@ -174,13 +171,13 @@ nav ul a:hover {
 }
 
 .heading {
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 700;
   color: #000;
 }
 
 .heading-text {
-  font-size: 24px;
+  font-size: 18px;
   color: #00000073;
   margin-top: 3rem;
 }
@@ -190,22 +187,20 @@ nav ul a:hover {
   height: auto;
   object-fit: contain;
 }
+
+/* About */
 .about {
-  width:100% ;
-  padding: 3rem;
+  width: 100%;
+  padding: 5rem;
   height: 35rem;
   top: 0;
   left: 0;
-
 }
 .about-container {
-  /* width: 100%;
-  height: 100%;
-  padding-bottom: 2rem; */
-  width: 80%;
-  margin:auto;
+  width: 65%;
+  margin: auto;
 }
-.about-download{
+.about-download {
   display: flex;
 }
 .about-heading {
@@ -217,26 +212,475 @@ nav ul a:hover {
   font-size: 1.5rem;
   text-transform: uppercase;
 }
-.about-text{
+.about-text {
   font-size: 20px;
   font-weight: 300;
-
 }
 
-.about-download a{
+.about-download a {
   text-decoration: none;
-  color:#000;
-  
+  color: #000;
 }
-.about-cv{
+.about-cv {
   font-size: 1.5rem;
   font-weight: 500;
   display: inline-block;
 }
-.download-image{
-width: 2.1rem;
-height: 2.1rem;
+.download-image {
+  width: 2.1rem;
+  height: 2.1rem;
 }
+
+.skills {
+  width: 100%;
+  padding: 5rem;
+  height: 35rem;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 360px) {
+  .skills {
+    margin-top: 32rem;
+  }
+}
+.skills-technical {
+  width: 65%;
+  margin: auto;
+  top: 0;
+  left: 0;
+}
+.tech-skills {
+  text-transform: uppercase;
+  color: #161616;
+}
+.skills-technical li {
+  color: #645c5c;
+}
+
+.portfolio {
+  width: 100%;
+  padding: 5rem;
+  height: 35rem;
+  top: 0;
+  left: 0;
+}
+.portfolio-menu {
+  width: 65%;
+  margin: auto;
+  top: 0;
+  left: 0;
+}
+.portfolio-heading {
+  color: #207733;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+.sawa-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Blog */
+
+.blog-heading {
+  text-align: center;
+  color: #207733;
+  text-transform: uppercase;
+}
+
+.blog {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+
+.blog-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+
+.blog-form-text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.blog-form-text:focus {
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.blog-form-text {
+  resize: none;
+  height: 120px;
+}
+
+.blog-form-btn {
+  border: 0;
+  background: #207733;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.blog-form-btn:hover {
+  background: #051b0a;
+}
+
+/*Contact */
+.contact-heading,
+.login-heading,
+.signup-heading {
+  text-align: center;
+  color: #207733;
+  text-transform: uppercase;
+}
+
+.contact {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+
+.contact-form-text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.contact-form-text:focus {
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.contact-form-text {
+  resize: none;
+  height: 120px;
+}
+
+.contact-form-btn {
+  border: 0;
+  background: #207733;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact-form-btn:hover {
+  background: #051b0a;
+}
+
+/* Login */
+.login {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+.login-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+.email-form {
+  position: relative;
+}
+.image-form {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+.envelope {
+  width: 24px;
+  height: 24px;
+}
+
+.login-form-text-1 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.login-form-text-1:focus {
+  box-shadow: 0 0 6px 2px #34495e;
+}
+
+.password-form {
+  position: relative;
+}
+
+.image-form-1 {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+
+.password-key-image {
+  width: 24px;
+  height: 24px;
+}
+
+.login-form-text-2 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.login-form-text-2:focus {
+  box-shadow: 0 0 6px 2px #2f3841;
+}
+
+.span-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+.fa {
+  font-size: 3rem;
+  color: rgba(70, 68, 68, 0.801);
+}
+
+.login-form-btn {
+  border: 1px solid #000;
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.btn-char {
+  font-size: 2rem;
+}
+.login-form-btn:hover {
+  border: 0;
+  background-color: #207733;
+  color: #fff;
+  transition: all 0.5s;
+}
+.redirect-links {
+  padding: 1rem;
+  gap: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.redirect-links a {
+  text-decoration: none;
+}
+.create {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+}
+/*Forgot */
+.forgot {
+  color: #000;
+  text-transform: capitalize;
+}
+#forgot {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+
+/*Sign up */
+.signup {
+  width: 100%;
+  height: 35rem;
+  margin-top: 2rem;
+}
+
+.signup-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 5px;
+  overflow: hidden;
+}
+.user-form {
+  position: relative;
+}
+.user-image-form {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+.email-form {
+  position: relative;
+}
+
+.image-form {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+.user-image {
+  width: 24px;
+  height: 24px;
+}
+
+.envelope {
+  width: 24px;
+  height: 24px;
+}
+
+.signup-form-text-1 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.signup-form-text-1:focus {
+  box-shadow: 0 0 6px 2px #34495e;
+}
+
+.password-form {
+  position: relative;
+}
+
+.image-form-1 {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+}
+
+.password-key-image {
+  width: 24px;
+  height: 24px;
+}
+
+.signup-form-text-2 {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #d9d9d9;
+  padding: 20px 40px;
+  outline: none;
+  color: #000;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.signup-form-text-2:focus {
+  box-shadow: 0 0 6px 2px #2f3841;
+}
+
+.span-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.fa {
+  font-size: 3rem;
+  color: rgba(70, 68, 68, 0.801);
+}
+
+.signup-form-btn {
+  border: 1px solid #000;
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-char {
+  font-size: 2rem;
+}
+
+.signup-form-btn:hover {
+  border: 0;
+  background-color: #207733;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.redirect-link {
+  padding: 1rem;
+}
+
+.redirect-link a {
+  text-decoration: none;
+}
+
+.create-login {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 /* Footer */
 
 footer {
@@ -244,7 +688,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 90px;
+  height: 70px;
   margin-left: auto;
   margin-right: auto;
   background-color: #333;
@@ -259,11 +703,9 @@ footer {
 .copyright {
   text-align: center;
   align-content: center;
-  padding: 0.5rem;
 }
 .twitter-logo,
 .linkedin-logo {
   width: 1.5rem;
   height: 1.5rem;
-  padding: 2px;
 }
