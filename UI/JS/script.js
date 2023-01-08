@@ -1,13 +1,11 @@
-const menu_btn = document.querySelector(".hamburger");
-const mobile_menu = document.querySelector(".mobile-nav");
+const toggleButton = document.getElementsByClassName("toggle-button")[0];
+const navbarLinks = document.getElementsByClassName("navbar-links")[0];
 
-menu_btn.addEventListener("click", function () {
-  menu_btn.classList.toggle("is-active");
-  mobile_menu.classList.toggle("is-active");
+toggleButton.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
 });
 
 let state = false;
-
 function toggle() {
   if (state) {
     document.getElementById("password").setAttribute("type", "password");
@@ -16,7 +14,6 @@ function toggle() {
   } else {
     document.getElementById("password").setAttribute("type", "text");
     document.getElementById("eye").style.color = "#000000";
-
     state = true;
   }
 }
