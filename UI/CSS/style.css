@@ -39,6 +39,15 @@ body {
 .navbar-links li:hover {
   background-color: #555;
 }
+.dropdown{
+  position: relative;
+}
+.dropdown-list{
+  display: none;
+}
+.dropdown:hover {
+  display: block;
+}
 .toggle-button {
   position: absolute;
   top: 0.75rem;
@@ -84,11 +93,7 @@ body {
     margin-top: 15rem;
   }
 }
-.pisces-logo{
-  width: 2rem;
-  height: 2rem;
-  object-fit: cover;
-}
+
 .hire {
   text-decoration: none;
   color: #000;
@@ -198,6 +203,8 @@ body {
   color: #2e2b2b;
 }
 
+/* Portfolio  */
+
 .portfolio {
   width: 100%;
   padding: 3rem;
@@ -238,6 +245,11 @@ body {
   padding: 0 5px;
   overflow: hidden;
 }
+.profile-picture{
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+} 
 .blog-form-text {
   display: block;
   width: 100%;

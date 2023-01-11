@@ -6,14 +6,14 @@ toggleButton.addEventListener("click", () => {
 });
 
 let state = false;
-function toggle() {
+function toggle(elementId, eye) {
   if (state) {
-    document.getElementById("password").setAttribute("type", "password");
-    document.getElementById("eye").style.color = "#207733";
+    document.getElementById(elementId).setAttribute("type", "password");
+    document.getElementById(eye).style.color = "#207733";
     state = false;
   } else {
-    document.getElementById("password").setAttribute("type", "text");
-    document.getElementById("eye").style.color = "#000000";
+    document.getElementById(elementId).setAttribute("type", "text");
+    document.getElementById(eye).style.color = "#000000";
     state = true;
   }
 }

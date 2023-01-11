@@ -25,7 +25,12 @@
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li>
+            <a href="#blog">Blog</a>
+            <ul class="dropdown">
+              <li class="dropdown-list"><a href="#">List Of Blogs</a></li>
+            </ul>
+          </li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#login">Login</a></li>
           <li><a href="#signup">Sign up</a></li>
@@ -169,24 +174,23 @@
         <h1 class="blog-heading">Blog</h1>
         <div class="blog-form">
           <form class="blog-form" onsubmit="blogMenu()">
-            <input
-              type="text"
-              id="blog-title"
-              class="blog-form-text"
-              placeholder="Blog Title"
-              required
-            />
-            <input
-              type="text"
-              id="blog-snippet"
-              class="blog-form-text"
-              placeholder="Blog Snippet"
-              required
-            />
+            <div>
+              <label for="" class="profile-picture">Profile Picture</label>
+              <input type="file" name="blog-image" id="blog-image" required />
+            </div>
+            <div>
+              <input
+                type="text"
+                id="blog-title"
+                class="blog-form-text"
+                placeholder="Blog Title"
+                required
+              />
+            </div>
             <textarea
               class="blog-form-text"
               id="message"
-              placeholder="Blog Body"
+              placeholder="Description"
               required
             ></textarea>
             <input type="submit" class="blog-form-btn" value="Submit" />
@@ -260,7 +264,7 @@
               <div>
                 <input
                   type="password"
-                  id="password"
+                  id="login-password"
                   class="login-form-text-2"
                   placeholder="Password"
                   required
@@ -269,8 +273,8 @@
                   ><i
                     class="fa fa-eye span-toggle"
                     aria-hidden="true"
-                    id="eye"
-                    onclick="toggle()"
+                    id="login-eye"
+                    onclick="toggle('login-password','login-eye')"
                   ></i>
                 </span>
               </div>
@@ -391,7 +395,7 @@
               <div>
                 <input
                   type="password"
-                  id="password"
+                  id="signup-password"
                   class="signup-form-text-2"
                   placeholder="Password"
                   required
@@ -400,8 +404,8 @@
                   ><i
                     class="fa fa-eye span-toggle"
                     aria-hidden="true"
-                    id="eye"
-                    onclick="toggle()"
+                    id="signup-eye"
+                    onclick="toggle('signup-password','signup-eye')"
                   ></i>
                 </span>
               </div>
