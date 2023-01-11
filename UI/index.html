@@ -70,21 +70,78 @@
         </div>
       </div>
     </div>
-
     <!--Skills-->
-
     <div class="skills" id="skills">
       <div class="skills-technical">
         <div>
           <h2 class="tech-skills">technical skills</h2>
         </div>
-        <div>
-          <li>HTML,CSS,JavaScript</li>
-          <li>Designing tool(Figma)</li>
-          <li>Project management tools(Jira, Trello)</li>
-          <li>Version control(Git)</li>
-          <li>Front end framework (ReactJS, Redux)</li>
-          <li>Backend framework (NodeJS/Express)</li>
+        <div class="languages">
+          <div class="html">
+            <img
+              src="./Images/icons8-html-5-64.png"
+              alt="HTML Logo"
+              class="html-image"
+            />
+            <p class="html-text">HTML</p>
+          </div>
+          <div class="css">
+            <img
+              src="./Images/icons8-css3-48.png"
+              alt="CSS Logo"
+              class="css-image"
+            />
+            <p class="css-text">CSS</p>
+          </div>
+          <div class="js">
+            <img
+              src="./Images/icons8-js-64.png"
+              alt="JS Logo"
+              class="js-image"
+            />
+            <p class="js-text">JavaScript</p>
+          </div>
+          <div class="figma">
+            <img
+              src="./Images/icons8-figma-48.png"
+              alt="Figma Logo"
+              class="figma-image"
+            />
+            <p class="figma-text">Figma</p>
+          </div>
+
+          <div class="git">
+            <img
+              src="./Images/icons8-git-48.png"
+              alt="GIT Logo"
+              class="git-image"
+            />
+            <p class="git-text">&nbsp;Git</p>
+          </div>
+          <div class="trello">
+            <img
+              src="./Images/icons8-trello-48.png"
+              alt="Trello Logo"
+              class="trello-image"
+            />
+            <p class="trello-text">Trello</p>
+          </div>
+          <div class="react">
+            <img
+              src="./Images/icons8-react-100.png"
+              alt="React Logo"
+              class="react-image"
+            />
+            <p class="react-text">ReactJS</p>
+          </div>
+          <div class="node">
+            <img
+              src="./Images/icons8-node-js-48.png"
+              alt="Node Logo"
+              class="node-image"
+            />
+            <p class="node-text">NodeJS</p>
+          </div>
         </div>
       </div>
     </div>
@@ -107,26 +164,28 @@
       </div>
     </div>
     <!--Blog-->
-
     <div class="blog" id="blog">
       <div class="blog-menu">
         <h1 class="blog-heading">Blog</h1>
         <div class="blog-form">
-          <form class="blog-form">
+          <form class="blog-form" onsubmit="blogMenu()">
             <input
               type="text"
+              id="blog-title"
               class="blog-form-text"
               placeholder="Blog Title"
               required
             />
             <input
-              type="email"
+              type="text"
+              id="blog-snippet"
               class="blog-form-text"
               placeholder="Blog Snippet"
               required
             />
             <textarea
               class="blog-form-text"
+              id="message"
               placeholder="Blog Body"
               required
             ></textarea>
@@ -143,17 +202,20 @@
           <form class="contact-form">
             <input
               type="text"
+              id="name"
               class="contact-form-text"
               placeholder="You Name"
               required
             />
             <input
               type="email"
+              id="email"
               class="contact-form-text"
               placeholder="Your Email"
               required
             />
             <textarea
+              id="message"
               class="contact-form-text"
               placeholder="Your Message"
               required
@@ -163,7 +225,6 @@
         </div>
       </div>
     </div>
-
     <!--Login-->
     <div class="login" id="login">
       <div class="login-menu">
@@ -180,7 +241,8 @@
               </div>
               <div>
                 <input
-                  type="text"
+                  type="email"
+                  id="email"
                   class="login-form-text-1"
                   placeholder="Email"
                   required
@@ -198,10 +260,10 @@
               <div>
                 <input
                   type="password"
+                  id="password"
                   class="login-form-text-2"
                   placeholder="Password"
                   required
-                  id="password"
                 />
                 <span
                   ><i
@@ -227,7 +289,6 @@
         </div>
       </div>
     </div>
-
     <!--Forgot-->
     <div class="forgot" id="forgot">
       <div class="forgot-menu">
@@ -244,7 +305,8 @@
               </div>
               <div>
                 <input
-                  type="text"
+                  type="email"
+                  id="email"
                   class="login-form-text-1"
                   placeholder="Email"
                   required
@@ -275,6 +337,7 @@
               <div>
                 <input
                   type="text"
+                  id="firstName"
                   class="signup-form-text-1"
                   placeholder="First Name"
                   required
@@ -292,13 +355,13 @@
               <div>
                 <input
                   type="text"
+                  id="lastName"
                   class="signup-form-text-1"
                   placeholder="Last Name"
                   required
                 />
               </div>
             </div>
-
             <div class="email-form">
               <div class="image-form">
                 <img
@@ -310,6 +373,7 @@
               <div>
                 <input
                   type="email"
+                  id="email"
                   class="signup-form-text-1"
                   placeholder="Email"
                   required
@@ -327,10 +391,10 @@
               <div>
                 <input
                   type="password"
+                  id="password"
                   class="signup-form-text-2"
                   placeholder="Password"
                   required
-                  id="password"
                 />
                 <span
                   ><i
@@ -342,7 +406,6 @@
                 </span>
               </div>
             </div>
-
             <div>
               <button class="signup-form-btn">
                 Sign up<span class="btn-char">&#8594;</span>
@@ -388,7 +451,7 @@
         </div>
       </div>
     </footer>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./JS/script.js"></script>
   </body>
 </html>

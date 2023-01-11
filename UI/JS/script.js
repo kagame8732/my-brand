@@ -17,3 +17,14 @@ function toggle() {
     state = true;
   }
 }
+
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+});
+
+function blogMenu() {
+  let title = document.getElementById("blog-title").value;
+  let snippet = document.getElementById("blog-snippet").value;
+  let body = document.getElementById("message").value;
+  console.log(title, snippet, body);
+}
