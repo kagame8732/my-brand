@@ -25,16 +25,21 @@
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li>
-            <a href="#blog">Blog</a>
-            <ul class="dropdown">
-              <li class="dropdown-list"><a href="#">List Of Blogs</a></li>
+          <!-- <div class="dropdown">
+            <div class="select">
+              <li class="selected"><a href="#blog">Blog </a></li>
+              <div class="caret"></div>
+            </div>
+            <ul class="menu">
+              <li class="active">List</li>
+              <li>List</li>
             </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#login">Login</a></li>
-          <li><a href="#signup">Sign up</a></li>
-          <li><a href="#about" class="hire">hire me</a></li>
+          </div> -->
+          <li><a href="#blog" class="menus">Blog </a></li>
+          <li><a href="#contact" class="menus">Contact</a></li>
+          <li><a href="#login" class="menus">Login</a></li>
+          <li><a href="#signup" class="menus">Sign up</a></li>
+          <li><a href="#about" class="hire menus">hire me</a></li>
         </ul>
       </div>
     </nav>
@@ -88,7 +93,13 @@
               alt="HTML Logo"
               class="html-image"
             />
-            <p class="html-text">HTML</p>
+            <p class="html-text">
+              HTML
+              <span class="html-desc"
+                >I have 2years of experience in HTML and have completed several
+                projects</span
+              >
+            </p>
           </div>
           <div class="css">
             <img
@@ -96,7 +107,13 @@
               alt="CSS Logo"
               class="css-image"
             />
-            <p class="css-text">CSS</p>
+            <p class="css-text">
+              CSS
+              <span class="html-desc"
+                >I have 2years of experience in CSS and have completed several
+                projects</span
+              >
+            </p>
           </div>
           <div class="js">
             <img
@@ -104,7 +121,13 @@
               alt="JS Logo"
               class="js-image"
             />
-            <p class="js-text">JavaScript</p>
+            <p class="js-text">
+              JavaScript
+              <span class="html-desc"
+                >I have 2years of experience in JS and have completed several
+                projects</span
+              >
+            </p>
           </div>
           <div class="figma">
             <img
@@ -112,7 +135,13 @@
               alt="Figma Logo"
               class="figma-image"
             />
-            <p class="figma-text">Figma</p>
+            <p class="figma-text">
+              Figma
+              <span class="html-desc"
+                >I have 2years of experience in Figmaw and have completed
+                several projects</span
+              >
+            </p>
           </div>
 
           <div class="git">
@@ -121,7 +150,13 @@
               alt="GIT Logo"
               class="git-image"
             />
-            <p class="git-text">&nbsp;Git</p>
+            <p class="git-text">
+              &nbsp;Git
+              <span class="html-desc"
+                >I have 2years of experience in GIT and have completed several
+                projects</span
+              >
+            </p>
           </div>
           <div class="trello">
             <img
@@ -129,23 +164,13 @@
               alt="Trello Logo"
               class="trello-image"
             />
-            <p class="trello-text">Trello</p>
-          </div>
-          <div class="react">
-            <img
-              src="./Images/icons8-react-100.png"
-              alt="React Logo"
-              class="react-image"
-            />
-            <p class="react-text">ReactJS</p>
-          </div>
-          <div class="node">
-            <img
-              src="./Images/icons8-node-js-48.png"
-              alt="Node Logo"
-              class="node-image"
-            />
-            <p class="node-text">NodeJS</p>
+            <p class="trello-text">
+              Trello
+              <span class="html-desc"
+                >I have 2years of experience in Trello and have completed
+                several projects</span
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -173,7 +198,7 @@
       <div class="blog-menu">
         <h1 class="blog-heading">Blog</h1>
         <div class="blog-form">
-          <form class="blog-form" onsubmit="blogMenu()">
+          <form class="blog-form">
             <div>
               <label for="" class="profile-picture">Profile Picture</label>
               <input type="file" name="blog-image" id="blog-image" required />
@@ -203,7 +228,7 @@
       <div class="contact-menu">
         <h1 class="contact-heading">Contact</h1>
         <div class="contact-form">
-          <form class="contact-form">
+          <form class="contact-form" id="form">
             <input
               type="text"
               id="name"
@@ -219,12 +244,17 @@
               required
             />
             <textarea
-              id="message"
+              id="messages"
               class="contact-form-text"
               placeholder="Your Message"
               required
             ></textarea>
-            <input type="submit" class="contact-form-btn" value="Send" />
+            <input
+              type="submit"
+              id="submit"
+              class="contact-form-btn"
+              value="Submit"
+            />
           </form>
         </div>
       </div>
