@@ -20,30 +20,28 @@
         <span class="bar"></span>
       </a>
       <div class="navbar-links">
-        <ul>
+        <ul id="navbar">
           <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <!-- <div class="dropdown">
-            <div class="select">
-              <li class="selected"><a href="#blog">Blog </a></li>
-              <div class="caret"></div>
+          <li>
+            <a role="link" aria-disabled="true">Blog&#8964;</a>
+            <div class="sub-menu-1">
+              <ul>
+                <li><a href="#blog">Add Blog</a></li>
+                <li><a href="#blog-list">List of Blogs</a></li>
+              </ul>
             </div>
-            <ul class="menu">
-              <li class="active">List</li>
-              <li>List</li>
-            </ul>
-          </div> -->
-          <li><a href="#blog" class="menus">Blog </a></li>
-          <li><a href="#contact" class="menus">Contact</a></li>
-          <li><a href="#login" class="menus">Login</a></li>
-          <li><a href="#signup" class="menus">Sign up</a></li>
-          <li><a href="#about" class="hire menus">hire me</a></li>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#signup">Sign up</a></li>
+          <li><a href="#about">hire me</a></li>
         </ul>
       </div>
     </nav>
-    <div class="nav-header">
+    <div class="nav-header" id="nav-header">
       <div class="left">
         <h2 class="heading">Hello, I&#39;m Alex Kagame</h2>
         <p class="heading-text">
@@ -138,8 +136,8 @@
             <p class="figma-text">
               Figma
               <span class="html-desc"
-                >I have 2years of experience in Figmaw and have completed
-                several projects</span
+                >I have 2years of experience in Figma and have completed several
+                projects</span
               >
             </p>
           </div>
@@ -220,6 +218,60 @@
             ></textarea>
             <input type="submit" class="blog-form-btn" value="Submit" />
           </form>
+        </div>
+      </div>
+    </div>
+    <!--Blog List-->
+    <div class="blog-list" id="blog-list">
+      <div class="list-of-blogs">
+        <h2 class="blog-list-heading">List of blog</h2>
+        <div class="list-menu">
+          <div class="blog-list-menu">
+            <div>
+              <img
+                src="./Images/Holywood.jpg"
+                alt="Blog image"
+                class="blog-image"
+              />
+              <h3 class="blog-list-title">district in Los Angeles</h3>
+              <p class="blog-list-description">
+                It is very famous around the world<br />
+                and known as movies place
+              </p>
+              <div>
+                <button class="btn-like">Like&#128077;</button>
+                <button class="btn-subscribe">&#128276;Subscribe</button>
+              </div>
+            </div>
+            <div>
+              <img
+                src="./Images/horse.jpg"
+                alt="Blog image"
+                class="blog-image"
+              />
+              <h3 class="blog-list-title">Horse</h3>
+              <p class="blog-list-description">
+                It is very famous around the world<br />
+                and known as movies place
+              </p>
+              <div>
+                <button class="btn-like">Like&#128077;</button>
+                <button class="btn-subscribe">&#128276;Subscribe</button>
+              </div>
+            </div>
+            <div>
+              <img src="./Images/px.jpg" alt="Blog image" class="blog-image" />
+              <h3 class="blog-list-title">California</h3>
+              <p class="blog-list-description">
+                It is very famous around the world<br />and known as movies
+                place
+              </p>
+              <div>
+                <button class="btn-like">Like&#128077;</button>
+                <button class="btn-subscribe">&#128276;Subscribe</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
