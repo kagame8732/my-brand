@@ -196,15 +196,15 @@
       <div class="blog-menu">
         <h1 class="blog-heading">Blog</h1>
         <div class="blog-form">
-          <form class="blog-form">
+          <form class="blog-form" id="blogForm">
             <div>
-              <label for="" class="profile-picture">Profile Picture</label>
-              <input type="file" name="blog-image" id="blog-image" required />
+              <!-- <label for="" class="profile-picture">Profile Picture</label> -->
+              <!-- <input type="file" name="blog-image" id="blogImage" required /> -->
             </div>
             <div>
               <input
                 type="text"
-                id="blog-title"
+                id="blogTitle"
                 class="blog-form-text"
                 placeholder="Blog Title"
                 required
@@ -212,7 +212,7 @@
             </div>
             <textarea
               class="blog-form-text"
-              id="message"
+              id="blogMessage"
               placeholder="Description"
               required
             ></textarea>
@@ -280,7 +280,8 @@
       <div class="contact-menu">
         <h1 class="contact-heading">Contact</h1>
         <div class="contact-form">
-          <form class="contact-form" id="form">
+          <div class="contact-message" id="contact-message"></div>
+          <form class="contact-form" id="myForm">
             <input
               type="text"
               id="name"
@@ -296,18 +297,16 @@
               required
             />
             <textarea
-              id="messages"
+              id="description"
               class="contact-form-text"
               placeholder="Your Message"
               required
             ></textarea>
-            <input
-              type="submit"
-              id="submit"
-              class="contact-form-btn"
-              value="Submit"
-            />
+            <input type="submit" class="contact-form-btn" value="submit" />
           </form>
+          <h2 class="test"></h2>
+          <h3 class="test-2"></h3>
+          <h4 class="test-3"></h4>
         </div>
       </div>
     </div>
@@ -316,7 +315,7 @@
       <div class="login-menu">
         <h2 class="login-heading">Login here</h2>
         <div class="login-form">
-          <form class="login-form">
+          <form class="login-form" id="loginForm">
             <div class="email-form">
               <div class="image-form">
                 <img
@@ -328,7 +327,7 @@
               <div>
                 <input
                   type="email"
-                  id="email"
+                  id="loginEmail"
                   class="login-form-text-1"
                   placeholder="Email"
                   required
@@ -346,7 +345,7 @@
               <div>
                 <input
                   type="password"
-                  id="login-password"
+                  id="loginPassword"
                   class="login-form-text-2"
                   placeholder="Password"
                   required
@@ -356,7 +355,7 @@
                     class="fa fa-eye span-toggle"
                     aria-hidden="true"
                     id="login-eye"
-                    onclick="toggle('login-password','login-eye')"
+                    onclick="toggle('loginPassword','login-eye')"
                   ></i>
                 </span>
               </div>

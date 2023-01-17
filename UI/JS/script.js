@@ -7,17 +7,6 @@ toggleButton.addEventListener("click", () => {
 });
 //Active navbar
 
-var btnContainer = document.getElementById("navbar");
-var btns = btnContainer.getElementsByClassName("menus");
-
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", () => {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace("active");
-    this.className += "active";
-  });
-}
-
 //Password visible and invisible
 let state = false;
 function toggle(elementId, eye) {
@@ -32,54 +21,51 @@ function toggle(elementId, eye) {
   }
 }
 //Blog menu
+const blogForm = document.getElementById("blogForm");
+const blogKey = "blogFormData";
+let blogData = JSON.parse(localStorage.getItem(blogKey)) || [];
+blogForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const blogDataValues = {
+    title: blogForm.blogTitle.value,
+    description: blogForm.blogMessage.value,
+  };
+  blogData.push(blogDataValues);
+  localStorage.setItem(blogKey, JSON.stringify(blogData));
+  blogForm.blogTitle.value = "";
+  blogForm.blogMessage.value = "";
+});
 
 // Contact
-let sendBtn = document.getElementById("submit");
-let form = document.getElementById("form");
+const form = document.getElementById("myForm");
+const contactKey = "ContactFormData";
+let contactData = JSON.parse(localStorage.getItem(contactKey)) || [];
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  const contactFormValues = {
+    name: form.name.value,
+    email: form.email.value,
+    messages: form.description.value,
+  };
+  contactData.push(contactFormValues);
+  localStorage.setItem(contactKey, JSON.stringify(contactData));
+  alert("Added successfull");
+  form.name.value = "";
+  form.email.value = "";
+  form.description.value = "";
 });
-sendBtn.addEventListener("click", (e) => {
-  let name = document.getElementById("name");
-  let email = document.getElementById("email");
-  let message = document.getElementById("messages");
-  name = name.value;
-  email = email.value;
-  message = message.value;
-  localStorage.setItem("Name", name);
-  localStorage.setItem("Email", email);
-  localStorage.setItem("Message", message);
-});
-
 // Login
-
-//Dropdown
-
-// const dropdowns = document.querySelector(".dropdown");
-
-// dropdowns.forEach((dropdown) => {
-//   const select = dropdown.querySelector(".select");
-//   const caret = dropdown.querySelector(".caret");
-//   const menu = dropdown.querySelector(".menu");
-//   const options = dropdown.querySelector(".menu li");
-//   const selected = dropdown.querySelector(".selected");
-
-//   select.addEventListener("click", () => {
-//     select.classList.toggle("select-clicked");
-//     caret.classList.toggle("caret-rotate");
-//     menu.classList.toggle("menu-open");
-//   });
-
-//   options.forEach((option) => {
-//     option.addEventListener("click", () => {
-//       select.innerText = option.innerText;
-//       select.classList.remove("select-clicked");
-//       caret.classList.remove("caret-rotate");
-//       menu.classList.remove("menu-open");
-//       options.forEach((option) => {
-//         option.classList.remove("active");
-//       });
-//       option.classList.add("active");
-//     });
-//   });
-// });
+const loginForm = document.getElementById("loginForm");
+const loginKey = "loginFormData";
+let loginData = JSON.parse(localStorage.getItem(loginKey)) || [];
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const loginFormValues = {
+    email: loginForm.loginEmail.value,
+    password: loginForm.loginPassword.value,
+  };
+  loginData.push(loginFormValues);
+  localStorage.setItem(loginKey, JSON.stringify(loginData));
+  loginForm.loginEmail.value = "";
+  loginForm.loginPassword.value = "";
+});

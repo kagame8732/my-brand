@@ -384,6 +384,9 @@ textarea.blog-form-text {
   height: 35rem;
   padding: 5rem;
 }
+.contact-message{
+  color: red;
+}
 .contact-form {
   max-width: 600px;
   margin: auto;
