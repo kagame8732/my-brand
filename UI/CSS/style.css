@@ -100,7 +100,8 @@ body {
   .about-container,
   .skills-technical,
   .portfolio-menu,
-  .blog-menu,.list-of-blogs,
+  .blog-menu,
+  .list-of-blogs,
   .contact-menu,
   .login-menu,
   .forgot-menu,
@@ -384,7 +385,7 @@ textarea.blog-form-text {
   height: 35rem;
   padding: 5rem;
 }
-.contact-message{
+.contact-message {
   color: red;
 }
 .contact-form {
