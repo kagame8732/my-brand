@@ -21,21 +21,57 @@ function toggle(elementId, eye) {
   }
 }
 //Blog menu
+// document.getElementById("add-item").addEventListener("click", function () {
+//   localStorage.setItem(
+//     "name",
+//     JSON.stringify({ name: "Kagame", food: "Cheese" })
+//   );
+//   updateUI();
+// });
+
 const blogForm = document.getElementById("blogForm");
 const blogKey = "blogFormData";
 let blogData = JSON.parse(localStorage.getItem(blogKey)) || [];
+console.log(blogData);
 blogForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const blogDataValues = {
+  const blogFormValues = {
     title: blogForm.blogTitle.value,
     description: blogForm.blogMessage.value,
   };
-  blogData.push(blogDataValues);
+  blogData.push(blogFormValues);
   localStorage.setItem(blogKey, JSON.stringify(blogData));
+  alert("Blog added successfull");
+  blogForm.blogImage.value = "";
   blogForm.blogTitle.value = "";
   blogForm.blogMessage.value = "";
 });
+function updateUI() {
+  let values = [],
+    keys = Object.keys(localStorage),
+    i = keys.length;
+  while (i--) {
+    values.push(localStorage.getItem(keys[i]));
+  }
+  document.getElementById("list-heading").textContent = values;
+}
 
+// Blog image
+document.querySelector("#blogImage").addEventListener("change", function () {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    localStorage.setItem("Image", reader.result);
+  });
+  reader.readAsDataURL(this.files[0]);
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const recentImageDataUrl = localStorage.getItem("Image");
+  if (recentImageDataUrl) {
+    document
+      .querySelector("#imgPreview")
+      .setAttribute("src", recentImageDataUrl);
+  }
+});
 // Contact
 const form = document.getElementById("myForm");
 const contactKey = "ContactFormData";

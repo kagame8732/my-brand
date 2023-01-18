@@ -22,11 +22,12 @@
       <div class="navbar-links">
         <ul id="navbar">
           <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li>
-            <a role="link" aria-disabled="true">Blog&#8964;</a>
+            <a role="link" aria-disabled="true"
+              >Blogs<span class="down">&#8964;</span></a
+            >
             <div class="sub-menu-1">
               <ul>
                 <li><a href="#blog">Add Blog</a></li>
@@ -37,38 +38,22 @@
           <li><a href="#contact">Contact</a></li>
           <li><a href="#login">Login</a></li>
           <li><a href="#signup">Sign up</a></li>
-          <li><a href="#about">hire me</a></li>
+          <li><a href="#">hire me</a></li>
         </ul>
       </div>
     </nav>
     <div class="nav-header" id="nav-header">
       <div class="left">
         <h2 class="heading">Hello, I&#39;m Alex Kagame</h2>
+        <h4 class="about-position">full stack software engineer</h4>
         <p class="heading-text">
-          I&#39;m a passionate and a dreamer software engineer<br />
-          who design influential brands and digital experiences.
+          I am passionate software engineer who holds bachelor degree in<br />
+          computer science from Kigali Independent University, <br />I have a
+          pleasant personality, I like continuous learning,<br />
+          I am open-minded, and I can work in a multicultural environment.
         </p>
-      </div>
-      <div class="right">
-        <img src="./Images/scan.jpg" alt="Profile image" class="logo" />
-      </div>
-    </div>
-    <!-- About -->
-    <div class="about" id="about">
-      <div class="about-container">
-        <div>
-          <h2 class="about-heading">alex kagame</h2>
-          <h4 class="about-position">full stack software engineer</h4>
-          <p class="about-text">
-            I am passionate software engineer who holds bachelor degree in
-            computer science from<br />
-            Kigali Independent University, I have a pleasant personality, I like
-            continuous learning, <br />I am open-minded, and I can work in a
-            multicultural environment.
-          </p>
-        </div>
-        <div class="about-download">
-          <p class="about-cv">Download CV</p>
+        <div class="download">
+          <p class="cv">Download CV</p>
           <a href="./Docs/Resume.pdf" download>
             <img
               src="./Images/download.png"
@@ -76,8 +61,35 @@
               class="download-image"
           /></a>
         </div>
+        <div class="social-medias">
+          <a
+            href="https://www.linkedin.com/in/alex-kagame-097096132/"
+            target="_blank"
+            ><img
+              src="./Images/linkedin.png"
+              alt="linkedin logo"
+              class="linkedin-logo"
+          /></a>
+          <a href="https://twitter.com/kagamealex" target="_blank">
+            <img
+              src="./Images/twitter.png"
+              alt="twitter logo"
+              class="twitter-logo"
+            />
+          </a>
+          <a href="https://github.com/kagame8732" target="_blank">
+            <img
+              src="./Images/github.png"
+              alt="github logo"
+              class="github-logo"
+          /></a>
+        </div>
+      </div>
+      <div class="right">
+        <img src="./Images/scan.jpg" alt="Profile image" class="logo" />
       </div>
     </div>
+
     <!--Skills-->
     <div class="skills" id="skills">
       <div class="skills-technical">
@@ -216,7 +228,12 @@
               placeholder="Description"
               required
             ></textarea>
-            <input type="submit" class="blog-form-btn" value="Submit" />
+            <input
+              type="submit"
+              id="add-item"
+              class="blog-form-btn"
+              value="Submit"
+            />
           </form>
         </div>
       </div>
@@ -228,13 +245,9 @@
         <div class="list-menu">
           <div class="blog-list-menu">
             <div>
-              <img
-                src="./Images/Holywood.jpg"
-                alt="Blog image"
-                class="blog-image"
-              />
-              <h3 class="blog-list-title">district in Los Angeles</h3>
-              <p class="blog-list-description">
+              <img src="" alt="Blog image" class="blog-image" id="imgPreview" />
+              <h3 class="blog-list-title" id="list-heading">California</h3>
+              <p class="blog-list-description" id="list-description">
                 It is very famous around the world<br />
                 and known as movies place
               </p>
@@ -503,39 +516,6 @@
         </div>
       </div>
     </div>
-    <!--Footer-->
-    <footer>
-      <div class="footer-menu">
-        <div class="contacts">
-          <p class="contacts-text">Tel: +250 783 743 221</p>
-        </div>
-        <div>
-          <p class="copyright">&#169;Copyright 2022</p>
-        </div>
-        <div class="social-medias">
-          <img
-            src="./Images/twitter.png"
-            alt="twitter logo"
-            class="twitter-logo"
-          />
-          <img
-            src="./Images/linkedin.png"
-            alt="linkedin logo"
-            class="linkedin-logo"
-          />
-          <img
-            src="./Images/facebook.png"
-            alt="facebook logo"
-            class="facebook-logo"
-          />
-          <img
-            src="./Images/instagram.png"
-            alt="instagram logo"
-            class="instagram-logo"
-          />
-        </div>
-      </div>
-    </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./JS/script.js"></script>
   </body>
