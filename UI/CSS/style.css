@@ -127,7 +127,6 @@ body {
   background-color: #fcc028;
   color: #000;
   border: none;
-
 }
 .hire:hover::after {
   transform: scaleX(0.2) scaleY(1.6);
@@ -149,22 +148,20 @@ body {
   font-size: 18px;
   font-weight: 500;
   color: #000;
-  letter-spacing: .5px;
-
+  letter-spacing: 0.5px;
 }
 .logo {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
-.download{
+.download {
   display: flex;
 }
 .download-image {
   width: 2rem;
   height: 2rem;
   margin-top: 20px;
-
 }
 .cv {
   font-size: 1.5rem;
@@ -176,9 +173,8 @@ body {
   font-size: 24px;
   text-transform: uppercase;
 }
-.social-medias{
+.social-medias {
   display: flex;
-  
 }
 .twitter-logo,
 .linkedin-logo,
@@ -187,7 +183,6 @@ body {
   width: 2rem;
   height: 2rem;
 }
-
 
 /* Skills */
 .skills {
@@ -211,16 +206,19 @@ body {
   place-content: center;
   column-gap: 2rem;
   padding: 2rem;
-
 }
-.html-container,.css-container,.js-container,.figma-container,.git-container,.trello-container{
+.html-container,
+.css-container,
+.js-container,
+.figma-container,
+.git-container,
+.trello-container {
   display: flex;
 }
 .html-desc {
   font-size: 20px;
   color: #08220e;
   display: block;
-
 }
 
 .html-image,
@@ -240,7 +238,6 @@ body {
 .trello-text {
   font-size: 1.5rem;
   font-weight: 600;
-
 }
 
 /* Portfolio  */
@@ -342,9 +339,7 @@ textarea.blog-form-text {
   color: #207733;
   text-transform: uppercase;
 }
-.list-menu {
-  /* width: 800px; */
-}
+
 .blog-image {
   width: 150px;
   height: 150px;
@@ -444,7 +439,7 @@ textarea.contact-form-text {
 }
 .email-form {
   position: relative;
-  z-index: -1;
+ 
 }
 .image-form {
   position: absolute;
@@ -477,7 +472,7 @@ textarea.contact-form-text {
 
 .password-form {
   position: relative;
-  z-index: -1;
+
 }
 
 .image-form-1 {
@@ -724,6 +719,3 @@ textarea.contact-form-text {
   font-size: 1rem;
   font-weight: 700;
 }
-
-
-
