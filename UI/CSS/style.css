@@ -3,12 +3,10 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 0;
 }
-
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -23,17 +21,14 @@ body {
   font-size: 1.5rem;
   margin: 0.5rem;
 }
-
 .navbar-links ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
-
 .navbar-links li {
   list-style: none;
 }
-
 .navbar-links li a {
   text-decoration: none;
   color: #fff;
@@ -41,9 +36,23 @@ body {
   display: block;
   text-transform: uppercase;
   font-weight: 600;
+  width: 100%;
 }
-
+.navbar-links li .active {
+  border-bottom: 5px solid rgb(231, 156, 156);
+  width: 100%;
+  border-radius: 1px;
+  transition: 0.5s ease;
+}
 .navbar-links li:hover {
+  background-color: #555;
+}
+.sub-menu-1 {
+  display: none;
+}
+.navbar-links ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
   background-color: #555;
 }
 
@@ -57,56 +66,56 @@ body {
   width: 30px;
   height: 21px;
 }
-
 .toggle-button .bar {
   height: 3px;
   width: 100%;
   background-color: #fff;
   border-radius: 10px;
 }
-
 @media screen and (max-width: 540px) {
   .toggle-button {
     display: flex;
   }
-
   .navbar-links {
     display: none;
     width: 100%;
   }
-
   .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .navbar-links ul {
     width: 100%;
     flex-direction: column;
   }
-
   .navbar-links li {
     text-align: center;
   }
-
   .navbar-links li a {
     padding: 0.3rem 0.7rem;
   }
-
   .navbar-links.active {
     display: flex;
   }
-
-  .about-container,.skills-technical,.portfolio-menu,.blog-menu,.contact-menu,.login-menu,.forgot-menu,.signup-menu{
+  .about-container,
+  .skills-technical,
+  .portfolio-menu,
+  .blog-menu,
+  .list-of-blogs,
+  .contact-menu,
+  .login-menu,
+  .forgot-menu,
+  .signup-menu {
     margin-top: 15rem;
   }
+  .blog-list-menu {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+    gap: 0.2rem;
+  }
+}
 
-}
-.pisces-logo{
-  width: 2rem;
-  height: 2rem;
-  object-fit: cover;
-}
 .hire {
   text-decoration: none;
   color: #000;
@@ -114,146 +123,151 @@ body {
   text-align: center;
   border-radius: 0.2rem;
 }
-
 .hire:hover {
   background-color: #fcc028;
   color: #000;
   border: none;
-  transform: translateY(-3px);
-  transition: all 0.4s;
-}
 
+}
 .hire:hover::after {
   transform: scaleX(0.2) scaleY(1.6);
 }
-
 /* Nav-header */
 .nav-header {
   display: flex;
   justify-content: center;
   align-content: center;
   padding: 4rem;
+  gap: 1rem;
 }
-
 .heading {
   font-size: 34px;
   font-weight: 700;
   color: #000;
 }
-
 .heading-text {
   font-size: 18px;
-  color: #00000073;
-  margin-top: 3rem;
-}
+  font-weight: 500;
+  color: #000;
+  letter-spacing: .5px;
 
+}
 .logo {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
-
-/* About */
-.about {
-  width: 100%;
-  padding: 3rem;
-  height: 35rem;
-  display: flex;
-  justify-content: center;
-}
-
-.about-container {}
-
-.about-download {
+.download{
   display: flex;
 }
+.download-image {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 20px;
 
-.about-heading {
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
 }
-
+.cv {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+}
 .about-position {
   color: #5e6fc5;
   font-size: 24px;
   text-transform: uppercase;
 }
-
-.about-text {
-  font-size: 18px;
-  font-weight: 300;
+.social-medias{
+  display: flex;
+  
+}
+.twitter-logo,
+.linkedin-logo,
+.github-logo,
+.instagram-logo {
+  width: 2rem;
+  height: 2rem;
 }
 
-.about-download a {
-  text-decoration: none;
-  color: #000;
-  margin-top: 20px;
-}
 
-.about-cv {
-  font-size: 1.5rem;
-  font-weight: 500;
-  display: inline-block;
-}
-
-.download-image {
-  width: 2.1rem;
-  height: 2.1rem;
-}
-
+/* Skills */
 .skills {
   width: 100%;
   padding: 3rem;
-  height: 35rem;
-  display: flex;
-  justify-content: center;
+  height: 37rem;
+  margin-top: 4rem;
 }
-
-.skills-technical {}
-
 .tech-skills {
   text-transform: uppercase;
   color: #161616;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 4rem;
 }
 
-.skills-technical li {
-  color: #645c5c;
+.languages {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-items: center;
+  place-content: center;
+  column-gap: 2rem;
+  padding: 2rem;
+
 }
+.html-container,.css-container,.js-container,.figma-container,.git-container,.trello-container{
+  display: flex;
+}
+.html-desc {
+  font-size: 20px;
+  color: #08220e;
+  display: block;
+
+}
+
+.html-image,
+.css-image,
+.js-image,
+.figma-image,
+.git-image,
+.trello-image {
+  width: 4rem;
+  height: 4rem;
+}
+.html-text,
+.css-text,
+.js-text,
+.figma-text,
+.git-text,
+.trello-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+}
+
+/* Portfolio  */
 
 .portfolio {
-  /* width: 100%;
-  padding: 5rem;
-  height: 35rem; */
   width: 100%;
   padding: 3rem;
   height: 35rem;
   display: flex;
   justify-content: center;
 }
-
-.portfolio-menu {}
-
 .portfolio-heading {
   color: #207733;
   font-size: 1.8rem;
   text-transform: uppercase;
   text-align: center;
 }
-
 .portfolio-text {
   text-align: center;
   font-size: 17px;
 }
-
 .sawa-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
 /* Blog */
-
 .blog {
   margin-top: 2.5rem;
   width: 100%;
@@ -266,14 +280,17 @@ body {
   color: #207733;
   text-transform: uppercase;
 }
-
 .blog-form {
   max-width: 600px;
   margin: auto;
   padding: 0 5px;
   overflow: hidden;
 }
-
+.profile-picture {
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+}
 .blog-form-text {
   display: block;
   width: 100%;
@@ -287,16 +304,13 @@ body {
   transition: 0.5s;
   border-radius: 5px;
 }
-
 .blog-form-text:focus {
   box-shadow: 0 0 10px 4px #34495e;
 }
-
 textarea.blog-form-text {
   resize: none;
   height: 120px;
 }
-
 .blog-form-btn {
   border: 0;
   background: #207733;
@@ -308,11 +322,58 @@ textarea.blog-form-text {
   font-size: 1rem;
   font-weight: 600;
 }
-
 .blog-form-btn:hover {
   background: #051b0a;
 }
-
+/* Blog list  */
+.blog-list {
+  width: 100%;
+  height: 35rem;
+  padding: 5rem;
+}
+.blog-list-menu {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-content: center;
+  gap: 0.5rem;
+}
+.blog-list-heading {
+  text-align: center;
+  color: #207733;
+  text-transform: uppercase;
+}
+.list-menu {
+  /* width: 800px; */
+}
+.blog-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.btn-like {
+  width: 4rem;
+  height: 1.5rem;
+  text-transform: uppercase;
+  background-color: rgb(86, 86, 179);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.btn-like:hover {
+  background-color: rgb(39, 39, 92);
+}
+.btn-subscribe {
+  background-color: red;
+  width: 6rem;
+  height: 1.5rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.btn-subscribe:hover {
+  background-color: rgb(172, 60, 60);
+}
 /*Contact */
 .contact-heading,
 .login-heading,
@@ -321,20 +382,20 @@ textarea.blog-form-text {
   color: #207733;
   text-transform: uppercase;
 }
-
 .contact {
   width: 100%;
   height: 35rem;
   padding: 5rem;
 }
-
+.contact-message {
+  color: red;
+}
 .contact-form {
   max-width: 600px;
   margin: auto;
   padding: 0 5px;
   overflow: hidden;
 }
-
 .contact-form-text {
   display: block;
   width: 100%;
@@ -348,16 +409,13 @@ textarea.blog-form-text {
   transition: 0.5s;
   border-radius: 5px;
 }
-
 .contact-form-text:focus {
   box-shadow: 0 0 10px 4px #34495e;
 }
-
 textarea.contact-form-text {
   resize: none;
   height: 120px;
 }
-
 .contact-form-btn {
   border: 0;
   background: #207733;
@@ -369,29 +427,25 @@ textarea.contact-form-text {
   font-size: 1rem;
   font-weight: 600;
 }
-
 .contact-form-btn:hover {
   background: #051b0a;
 }
-
 /* Login */
 .login {
   width: 100%;
-  height: 35rem;
+  height: 37rem;
   padding: 5rem;
 }
-
 .login-form {
   max-width: 600px;
   margin: auto;
   padding: 0 5px;
   overflow: hidden;
 }
-
 .email-form {
   position: relative;
+  z-index: -1;
 }
-
 .image-form {
   position: absolute;
   top: 1rem;
@@ -423,6 +477,7 @@ textarea.contact-form-text {
 
 .password-form {
   position: relative;
+  z-index: -1;
 }
 
 .image-form-1 {
@@ -518,7 +573,7 @@ textarea.contact-form-text {
 
 #forgot {
   width: 100%;
-  height: 37rem;
+  height: 40rem;
   padding: 3rem;
 }
 
@@ -670,26 +725,5 @@ textarea.contact-form-text {
   font-weight: 700;
 }
 
-/* Footer */
-
-footer {
-  background-color: #2f303a;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #676b6e;
-  color: #fff;
-}
-.footer-menu{
-  display: flex;
-  justify-content:space-around ;
-}
 
 
-.twitter-logo,
-.linkedin-logo,.facebook-logo,.instagram-logo {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: 8px;
-}
