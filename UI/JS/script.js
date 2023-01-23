@@ -22,7 +22,6 @@ function toggle(elementId, eye) {
 //Blog menu
 let blogCards = document.getElementById("blog-cards");
 let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
-
 document.getElementById("blog-form").addEventListener("submit", function (e) {
   e.preventDefault();
   let title = document.getElementById("blogTitle");
@@ -42,8 +41,20 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
   comment.value = "";
 });
 
-const blog = blogMessages.map((item) => {
-  console.log(item);
+const blogs = blogMessages.map((item) => {
+  const blog = `
+   <div class="blog-list-menu">
+   <div>
+   <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
+    <p class="blog-list-description" id="list-description">${item.message}</p>
+    </div>
+   </div>`;
+
+  return blog;
+});
+
+window.addEventListener("load", () => {
+  blogCards.innerHTML = blogs;
 });
 // Blog image
 
