@@ -28,6 +28,7 @@
           <li><a href="#contact">Contact</a></li>
           <li><a href="#login">&nbsp;&nbsp;&nbsp;Login</a></li>
           <li><a href="#blog">Add Blog</a></li>
+          <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
         </ul>
       </div>
     </nav>
@@ -209,7 +210,9 @@
           <form class="blog-form" id="blog-form">
             <div>
               <!-- <label for="" class="profile-picture">Profile Picture</label> -->
-              <!-- <input type="file" name="blog-image" id="blogImage" required /> -->
+              <input type="file" name="blog-image" id="blogImage" />
+              <div class="imageError"></div>
+              <img src="" alt="" id="imgPreview" />
             </div>
             <div>
               <input
@@ -217,22 +220,26 @@
                 id="blogTitle"
                 class="blog-form-text"
                 placeholder="Blog Title"
-                required
               />
             </div>
+            <div class="blogNameError"></div>
             <textarea
               class="blog-form-text"
               id="blogMessage"
               placeholder="Description"
-              required
             ></textarea>
+            <div class="descriptionError"></div>
             <textarea
               class="blog-form-text"
               id="blogComment"
               placeholder="Comment"
-              required
             ></textarea>
-            <input type="submit" class="blog-form-btn" value="Submit" />
+            <input
+              type="submit"
+              id="add-blog"
+              class="blog-form-btn"
+              value="Submit"
+            />
           </form>
         </div>
       </div>
@@ -244,44 +251,6 @@
         <div class="list-menu">
           <div class="blog-list-menu">
             <div id="blog-cards"></div>
-            <!-- <div>
-              <img src="" alt="Blog image" class="blog-image" id="imgPreview" />
-              <h3 class="blog-list-title" id="list-heading">California</h3>
-
-              <p class="blog-list-description" id="list-description">
-                It is very famous around the world<br />
-                and known as movies place
-              </p>
-              <div>
-                <button class="btn-like">&#128077;</button>
-              </div>
-            </div>
-            <div>
-              <img
-                src="./Images/horse.jpg"
-                alt="Blog image"
-                class="blog-image"
-              />
-              <h3 class="blog-list-title">Horse</h3>
-              <p class="blog-list-description">
-                It is very famous around the world<br />
-                and known as movies place
-              </p>
-              <div>
-                <button class="btn-like">&#128077;</button>
-              </div>
-            </div>
-            <div>
-              <img src="./Images/px.jpg" alt="Blog image" class="blog-image" />
-              <h3 class="blog-list-title">California</h3>
-              <p class="blog-list-description">
-                It is very famous around the world<br />and known as movies
-                place
-              </p>
-              <div>
-                <button class="btn-like">&#128077;</button>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>

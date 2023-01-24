@@ -35,7 +35,12 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
     index: blogMessages.length + 1,
   };
   blogMessages = [...blogMessages, blogInfo];
-  localStorage.setItem("blogInfo", JSON.stringify(blogMessages));
+  if (blogMessages) {
+    localStorage.setItem("blogInfo", JSON.stringify(blogMessages));
+    alert("Blog added successfull");
+  } else {
+    alert("Please add all info");
+  }
   title.value = "";
   message.value = "";
   comment.value = "";
@@ -43,21 +48,77 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
 
 const blogs = blogMessages.map((item) => {
   const blog = `
-   <div class="blog-list-menu">
-   <div>
+
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="list-description">${item.message}</p>
-    </div>
-   </div>`;
+    <h5 class="blog-list-description" id="list-description">${item.message}</h5>
+    <p class="blog-list-comment" id="list-comment">${item.comment}</p>
+   `;
 
   return blog;
 });
-
 window.addEventListener("load", () => {
   blogCards.innerHTML = blogs;
 });
-// Blog image
 
+// Blog image
+// const blodImage = document.querySelector("#blogImage");
+// let imageUrl;
+// blodImage.addEventListener("change", function () {
+//   const fileReader = new FileReader();
+//   fileReader.addEventListener("load", () => {
+//     imageUrl = fileReader.result;
+//   });
+//   fileReader.readAsDataURL(this.files[0]);
+// });
+
+// function createBlog(e) {
+//   e.preventDefault();
+//   const blogName = document.querySelector("#blogTitle");
+//   const blogDescription = document.querySelector("#blogMessage");
+//   const createBlogForm = document.querySelector("#blog-form");
+//   const nameError = createBlogForm.getElementsByClassName("blogNameError");
+//   const descriptionError = createBlogForm.querySelector(".descriptionError");
+//   const imageError = createBlogForm.querySelector(".imageError");
+//   const blogSubmitted = createBlogForm.querySelector(".blog-submitted");
+
+//   const blogs = {
+//     image: imageUrl,
+//     name: blogName.value,
+//     description: blogDescription.value,
+//     index: blogs.length + 1,
+//   };
+//   var y = blogs.image;
+//   if (y == "") {
+//     imageError.innerHTML = "blogs image is required";
+//     return false;
+//   }
+
+//   let x = blogs.name;
+//   var nameRegex = /^[^\s]+( [^\s]+)+$/;
+//   if (!x.match(nameRegex)) {
+//     nameError[0].innerHTML = "blogs title should be separeted by single space";
+//     return false;
+//   }
+
+//   var z = blogs.description;
+//   if (z.length <= 20) {
+//     descriptionError.innerHTML =
+//       "blogs description should be more than 20 letters";
+//     return false;
+//   }
+
+//   blodImage.value = "";
+//   blogName.value = "";
+//   blogDescription.value = "";
+//   imageError.innerHTML = "";
+//   nameError[0].innerHTML = "";
+//   descriptionError.innerHTML = "";
+//   blogs = [...blogs, blogs];
+//   localStorage.setItem("blogs", JSON.stringify(blogs));
+
+//   blogSubmitted.innerHTML = "blogs submitted successfully";
+//   return false;
+// }
 // Contact
 document
   .getElementById("contact-form")
@@ -76,6 +137,7 @@ document
     };
     contactMessages = [...contactMessages, message];
     localStorage.setItem("contactInfo", JSON.stringify(contactMessages));
+    alert("Message sent");
     name.value = "";
     email.value = "";
     contactMessage.value = "";
@@ -97,6 +159,7 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
   localStorage.setItem("userInfo", JSON.stringify(users));
   email.value = "";
   password.value = "";
+  window.location.href = "./dashboard.html";
 });
 
 //Signup
@@ -118,6 +181,7 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
   };
   signupUsers = [...signupUsers, signupInfo];
   localStorage.setItem("signupInfo", JSON.stringify(signupUsers));
+  alert("User created");
   firstName.value = "";
   lastName.value = "";
   signupEmail.value = "";

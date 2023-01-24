@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+}
+/* Dashboard  */
+.sidebar {
+    position: fixed;
+    background-color: #555;
+    width: 180px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.dash-nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    margin-left: 2rem;
+
+}
+
+.dash-nav li {
+    margin: 20px 0;
+}
+
+.sidebar .dash-nav li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+
+
+}
+
+.dash-nav .fa {
+    color: #fff;
+}
+
+.main {
+    margin-left: 200px;
+
+}
+table {
+    background-color: rgb(192, 192, 192);
+    width: 60%;
+    height: 400px;
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+th, td{
+    padding: 10px 15px;
+}
+th {
+    color: #fff;
+    background-color:#207733;
+    text-transform: uppercase;
+    height: 5px;
+}
+.you-name{
+    font-size: 1rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.card-dash {
+    text-align: center;
+    text-transform:uppercase ;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 8px;
+}
+
+.card-text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 900;
+    color: #207733;
+    padding: 1rem;
+}
+.blog {
+    margin-top: 2.5rem;
+    width: 100%;
+    height: 35rem;
+    padding: 5rem;
+}
+
+.blog-heading {
+    text-align: center;
+    color: #207733;
+    text-transform: uppercase;
+}
+
+.blog-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 5px;
+    overflow: hidden;
+}
+
+.profile-picture {
+    display: block;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.blog-form-text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background: #d9d9d9;
+    padding: 20px 40px;
+    outline: none;
+    color: #000;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.blog-form-text:focus {
+    box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.blog-form-text {
+    resize: none;
+    height: 120px;
+}
+
+.blog-form-btn {
+    border: 0;
+    background: #207733;
+    color: #fff;
+    padding: 12px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.blog-form-btn:hover {
+    background: #051b0a;
+}

@@ -2,10 +2,12 @@
 
 * {
   box-sizing: border-box;
-}
-body {
   margin: 0;
   padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
 }
 .navbar {
   display: flex;
@@ -188,8 +190,8 @@ body {
 /* Skills */
 .skills {
   width: 100%;
+  height: 39rem;
   padding: 3rem;
-  height: 37rem;
   margin-top: 4rem;
 }
 .tech-skills {
@@ -197,7 +199,7 @@ body {
   color: #161616;
   text-align: center;
   font-size: 2rem;
-  margin-top: 4rem;
+  margin-top: 4rem; 
 }
 
 .languages {
@@ -206,7 +208,7 @@ body {
   place-items: center;
   place-content: center;
   column-gap: 2rem;
-  padding: 2rem;
+  padding: 5rem;
 }
 .html-container,
 .css-container,
@@ -228,8 +230,8 @@ body {
 .figma-image,
 .git-image,
 .trello-image {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
 }
 .html-text,
 .css-text,
@@ -239,6 +241,7 @@ body {
 .trello-text {
   font-size: 1.5rem;
   font-weight: 600;
+  margin-top: 1rem;
 }
 
 /* Portfolio  */
@@ -326,21 +329,37 @@ textarea.blog-form-text {
 /* Blog list  */
 .blog-list {
   width: 100%;
-  height: 35rem;
+  height: 37rem;
   padding: 5rem;
 }
 .blog-list-menu {
-  display: grid;
+  /* display: grid;
   grid-template-columns: auto auto auto;
   place-content: center;
-  gap: 0.5rem;
+  gap: 0.5rem; */
+  
 }
 .blog-list-heading {
   text-align: center;
   color: #207733;
   text-transform: uppercase;
 }
-
+.blog-cards{
+}
+.blog-list-menu{
+}
+.blog-list-title{
+font-size: 25px;
+text-align: center;
+}
+.blog-list-description{
+  text-align: center;
+  font-size: 18px;
+}
+.blog-list-comment{
+  text-align: center;
+  font-size: 18px;
+}
 .blog-image {
   width: 150px;
   height: 150px;
@@ -370,6 +389,7 @@ textarea.blog-form-text {
 .btn-subscribe:hover {
   background-color: rgb(172, 60, 60);
 }
+
 /*Contact */
 .contact-heading,
 .login-heading,
@@ -380,7 +400,7 @@ textarea.blog-form-text {
 }
 .contact {
   width: 100%;
-  height: 35rem;
+  height: 37rem;
   padding: 5rem;
 }
 .contact-message {
@@ -440,7 +460,6 @@ textarea.contact-form-text {
 }
 .email-form {
   position: relative;
- 
 }
 .image-form {
   position: absolute;
@@ -473,7 +492,6 @@ textarea.contact-form-text {
 
 .password-form {
   position: relative;
-
 }
 
 .image-form-1 {
