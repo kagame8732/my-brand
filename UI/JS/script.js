@@ -1,7 +1,6 @@
 //Responsiveness
 const toggleButton = document.getElementsByClassName("toggle-button")[0];
 const navbarLinks = document.getElementsByClassName("navbar-links")[0];
-
 toggleButton.addEventListener("click", () => {
   navbarLinks.classList.toggle("active");
 });
@@ -44,7 +43,9 @@ const blogs = blogMessages
     <div class="blog-card">
   <img src="${item.image}" alt="" class="imgPreview" />
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="list-description">${item.message}</p></div>
+    <p class="blog-list-description" id="list-description">${item.message}</p>
+   
+    </div>
    `;
     return blog;
   })

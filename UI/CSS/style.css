@@ -17,6 +17,7 @@ body {
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 9999;
 }
 
 .brand-title {
@@ -111,7 +112,6 @@ body {
   .signup-menu {
     margin-top: 15rem;
   }
- 
 }
 
 .hire {
@@ -189,8 +189,8 @@ body {
 /* Skills */
 .skills {
   width: 100%;
-  height: 39rem;
-  padding: 3rem;
+  /* height: 39rem; */
+  padding: 5rem;
   margin-top: 4rem;
 }
 .tech-skills {
@@ -198,16 +198,26 @@ body {
   color: #161616;
   text-align: center;
   font-size: 2rem;
-  margin-top: 4rem; 
+  margin-top: 4rem;
 }
 
 .languages {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
   place-content: center;
   column-gap: 2rem;
   padding: 5rem;
+}
+@media screen and (max-width:540px) {
+  .languages{
+    display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      place-content: center;
+      column-gap: 2rem;
+      padding: 5rem;
+  }
 }
 .html-container,
 .css-container,
@@ -248,7 +258,7 @@ body {
 .portfolio {
   width: 100%;
   padding: 3rem;
-  height: 35rem;
+  /* height: 35rem; */
   display: flex;
   justify-content: center;
 }
@@ -257,6 +267,7 @@ body {
   font-size: 1.8rem;
   text-transform: uppercase;
   text-align: center;
+  padding: 1rem;
 }
 .portfolio-text {
   text-align: center;
@@ -264,14 +275,18 @@ body {
 }
 .sawa-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  padding: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+
 }
 /* Blog */
 .blog {
   margin-top: 2.5rem;
   width: 100%;
-  height: 35rem;
+  /* height: 35rem; */
   padding: 5rem;
 }
 
@@ -327,9 +342,6 @@ textarea.blog-form-text {
   background: #051b0a;
 }
 
-#blog-card{
-  background-color: red;
-}
 .message {
   width: 100%;
   position: relative;
@@ -337,26 +349,26 @@ textarea.blog-form-text {
   display: flex;
   justify-content: center;
 }
-.message .success{
+.message .success {
   font-size: 20px;
   position: absolute;
   color: green;
-  animation: buttons .3s linear;
+  animation: buttons 0.3s linear;
   display: none;
 }
-.message .danger{
-    font-size: 20px;
-      position: absolute;
-      color: red;
-      animation: buttons .5s linear;
-      display: none;
+.message .danger {
+  font-size: 20px;
+  position: absolute;
+  color: red;
+  animation: buttons 0.5s linear;
+  display: none;
 }
 
 @keyframes buttons {
   0% {
     transform: scale(0.1);
   }
-  50%{
+  50% {
     transform: scale(0.5);
   }
   100% {
@@ -367,46 +379,72 @@ textarea.blog-form-text {
 /* Blog list  */
 .blog-list {
   width: 100%;
-  height: 37rem;
+  /* height: 37rem; */
   padding: 5rem;
 }
 
 .imgPreview {
-  width: 100px;
-  height: 100px;
+  width: 50%;
+  display: block;
   object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.blog-cards{
+.blog-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem;
+    place-items: center;
+      place-content: center;
 }
-.blog-card{
+.blog-card {
   background-color: #f1f2f5;
+  box-shadow: 0 0 8px 4px #34495e;
+  width: 300px;
+  height: 350px;
+  padding: 20px 20px 20px;
+  word-wrap: break-word;
 }
 .blog-list-heading {
   text-align: center;
   color: #207733;
   text-transform: uppercase;
+  padding: 1rem;
 }
 
-.blog-list-title{
-font-size: 25px;
-text-align: center;
+.blog-list-title {
+  font-size: 25px;
+  text-align: center;
+  padding: 5px;
 }
-.blog-list-description{
+.blog-list-description {
   text-align: center;
   font-size: 18px;
 }
-.blog-list-comment{
-  text-align: center;
-  font-size: 18px;
-}
+
 .blog-image {
   width: 150px;
   height: 150px;
   object-fit: cover;
 }
-
-
+@media screen and (max-width:995px) {
+  .blog-cards{
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+    gap: 2%;
+  }
+}
+@media screen and (max-width:540px) {
+  .blog-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2%;
+  }
+  .blog-card{
+    place-self: center;
+  }
+}
 /*Contact */
 .contact-heading,
 .login-heading,
@@ -417,8 +455,9 @@ text-align: center;
 }
 .contact {
   width: 100%;
-  height: 37rem;
+  /* height: 37rem; */
   padding: 5rem;
+
 }
 .contact-message {
   color: red;
@@ -466,8 +505,8 @@ textarea.contact-form-text {
 /* Login */
 .login {
   width: 100%;
-  height: 37rem;
-  padding: 5rem;
+  /* height: 37rem; */
+  padding: 8rem;
 }
 .login-form {
   max-width: 600px;
@@ -501,6 +540,7 @@ textarea.contact-form-text {
   color: #000;
   transition: 0.5s;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .login-form-text-1:focus {
@@ -595,7 +635,7 @@ textarea.contact-form-text {
   font-size: 1rem;
   font-weight: 700;
 }
-.fa-check-circle{
+.fa-check-circle {
   background-color: #207733;
   font-size: 2rem;
 }
@@ -608,15 +648,15 @@ textarea.contact-form-text {
 
 #forgot {
   width: 100%;
-  height: 40rem;
-  padding: 3rem;
+  height: 42rem;
+  padding: 8rem;
 }
 
 /*Sign up */
 .signup {
   width: 100%;
-  height: 35rem;
-  margin-top: 2rem;
+  /* height: 35rem; */
+/* padding: 15rem; */
 }
 
 .signup-form {
