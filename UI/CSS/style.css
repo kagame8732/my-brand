@@ -146,6 +146,7 @@ body {
   font-size: 34px;
   font-weight: 700;
   color: #000;
+  margin-bottom: 5px;
 }
 .heading-text {
   font-size: 18px;
@@ -160,21 +161,24 @@ body {
 }
 .download {
   display: flex;
+  margin-top: 1rem;
 }
 .download-image {
   width: 2rem;
   height: 2rem;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 .cv {
   font-size: 1.5rem;
   font-weight: 500;
   display: inline-block;
+  margin-top: 4px;
 }
 .about-position {
   color: #5e6fc5;
   font-size: 24px;
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 .social-medias {
   display: flex;
@@ -313,6 +317,7 @@ textarea.blog-form-text {
   height: 120px;
 }
 .blog-form-btn {
+  width: 100%;
   border: 0;
   background: #207733;
   color: #fff;
@@ -326,6 +331,49 @@ textarea.blog-form-text {
 .blog-form-btn:hover {
   background: #051b0a;
 }
+.imgPreview{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+#blog-card{
+  background-color: red;
+
+}
+.message {
+  width: 100%;
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+.message .success{
+  font-size: 20px;
+  position: absolute;
+  color: green;
+  animation: buttons .3s linear;
+  display: none;
+}
+.message .danger{
+    font-size: 20px;
+      position: absolute;
+      color: red;
+      animation: buttons .5s linear;
+      display: none;
+}
+
+@keyframes buttons {
+  0% {
+    transform: scale(0.1);
+  }
+  50%{
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Blog list  */
 .blog-list {
   width: 100%;
@@ -333,21 +381,28 @@ textarea.blog-form-text {
   padding: 5rem;
 }
 .blog-list-menu {
-  /* display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
   place-content: center;
-  gap: 0.5rem; */
-  
+  gap: 5rem;
+  border-radius: 10px;
+}
+.blog-list-card{
+  background-color: #207733;
+  overflow: auto;
+
+}
+
+.blog-cards{
+width: 500px;
+height: 500px;
+
 }
 .blog-list-heading {
   text-align: center;
   color: #207733;
   text-transform: uppercase;
 }
-.blog-cards{
-}
-.blog-list-menu{
-}
+
 .blog-list-title{
 font-size: 25px;
 text-align: center;
@@ -577,6 +632,10 @@ textarea.contact-form-text {
   color: #000;
   font-size: 1rem;
   font-weight: 700;
+}
+.fa-check-circle{
+  background-color: #207733;
+  font-size: 2rem;
 }
 
 /*Forgot */

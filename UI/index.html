@@ -212,7 +212,6 @@
               <!-- <label for="" class="profile-picture">Profile Picture</label> -->
               <input type="file" name="blog-image" id="blogImage" />
               <div class="imageError"></div>
-              <img src="" alt="" id="imgPreview" />
             </div>
             <div>
               <input
@@ -229,11 +228,11 @@
               placeholder="Description"
             ></textarea>
             <div class="descriptionError"></div>
-            <textarea
+            <!-- <textarea
               class="blog-form-text"
               id="blogComment"
               placeholder="Comment"
-            ></textarea>
+            ></textarea> -->
             <input
               type="submit"
               id="add-blog"
@@ -241,6 +240,10 @@
               value="Submit"
             />
           </form>
+          <div class="message">
+            <div class="success" id="success">Your Blog successfully Sent!</div>
+            <div class="danger" id="danger">Fields can't be Empty!</div>
+          </div>
         </div>
       </div>
     </div>
@@ -248,10 +251,15 @@
     <div class="blog-list" id="blog-list">
       <div class="list-of-blogs">
         <h2 class="blog-list-heading">List of blog</h2>
+        <div class="blog-list-card"></div>
         <div class="list-menu">
           <div class="blog-list-menu">
             <div id="blog-cards"></div>
           </div>
+        </div>
+        <div class="test">
+          <h2 class="blog-title"></h2>
+          <p class="blog-messgae"></p>
         </div>
       </div>
     </div>
@@ -314,6 +322,7 @@
                   src="./Images/password.png"
                   alt="password-logo"
                   class="password-key-image"
+                  required
                 />
               </div>
               <div>
