@@ -111,12 +111,7 @@ body {
   .signup-menu {
     margin-top: 15rem;
   }
-  .blog-list-menu {
-    display: grid;
-    grid-template-columns: auto auto;
-    place-content: center;
-    gap: 0.2rem;
-  }
+ 
 }
 
 .hire {
@@ -331,11 +326,7 @@ textarea.blog-form-text {
 .blog-form-btn:hover {
   background: #051b0a;
 }
-.imgPreview{
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
+
 #blog-card{
   background-color: red;
 }
@@ -379,22 +370,17 @@ textarea.blog-form-text {
   height: 37rem;
   padding: 5rem;
 }
-.blog-list-menu {
-  display: flex;
-  place-content: center;
-  gap: 5rem;
-  border-radius: 10px;
-}
-.blog-list-card{
-  background-color: #207733;
-  overflow: auto;
 
+.imgPreview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 .blog-cards{
-width: 500px;
-height: 500px;
-
+}
+.blog-card{
+  background-color: #f1f2f5;
 }
 .blog-list-heading {
   text-align: center;
@@ -419,30 +405,7 @@ text-align: center;
   height: 150px;
   object-fit: cover;
 }
-.btn-like {
-  width: 4rem;
-  height: 1.5rem;
-  text-transform: uppercase;
-  background-color: rgb(86, 86, 179);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-}
-.btn-like:hover {
-  background-color: rgb(39, 39, 92);
-}
-.btn-subscribe {
-  background-color: red;
-  width: 6rem;
-  height: 1.5rem;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-.btn-subscribe:hover {
-  background-color: rgb(172, 60, 60);
-}
+
 
 /*Contact */
 .contact-heading,

@@ -41,9 +41,10 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
 const blogs = blogMessages
   .map((item) => {
     const blog = `
+    <div class="blog-card">
   <img src="${item.image}" alt="" class="imgPreview" />
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="list-description">${item.message}</p>
+    <p class="blog-list-description" id="list-description">${item.message}</p></div>
    `;
     return blog;
   })
