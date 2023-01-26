@@ -24,21 +24,11 @@
           <li><a href="#">Home</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li>
-            <a role="link" aria-disabled="true"
-              >Blogs<span class="down">&#8964;</span></a
-            >
-            <div class="sub-menu-1">
-              <ul>
-                <li><a href="#blog">Add Blog</a></li>
-                <li><a href="#blog-list">List of Blogs</a></li>
-              </ul>
-            </div>
-          </li>
+          <li><a href="#blog-list">List of Blogs</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#login">Login</a></li>
-          <li><a href="#signup">Sign up</a></li>
-          <li><a href="#">hire me</a></li>
+          <li><a href="#login">&nbsp;&nbsp;&nbsp;Login</a></li>
+          <li><a href="#blog">Add Blog</a></li>
+          <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
         </ul>
       </div>
     </nav>
@@ -199,11 +189,10 @@
       <div class="portfolio-menu">
         <h2 class="portfolio-heading">Portfolio</h2>
         <p class="portfolio-text">
-          I worked on project called Sawa Mobility that aims on providing<br />
-          transport service tailored to groups of people such as schools,
-          office<br />
-          staff and others where all transport fees and trips are monitored in
-          one app.
+          I worked on project called Sawa Mobility that aims on providing
+          transport service tailored to groups of people such as schools,<br />
+          office staff and others where all transport fees and trips are
+          monitored in one app.
         </p>
         <img
           src="./Images/sawa mobility.png"
@@ -217,10 +206,10 @@
       <div class="blog-menu">
         <h1 class="blog-heading">Blog</h1>
         <div class="blog-form">
-          <form class="blog-form" id="blogForm">
+          <form class="blog-form" id="blog-form">
             <div>
-              <label for="" class="profile-picture">Profile Picture</label>
-              <input type="file" name="blog-image" id="blogImage" required />
+              <input type="file" name="blog-image" id="blogImage" />
+              <div class="imageError"></div>
             </div>
             <div>
               <input
@@ -228,73 +217,33 @@
                 id="blogTitle"
                 class="blog-form-text"
                 placeholder="Blog Title"
-                required
               />
             </div>
+            <div class="blogNameError"></div>
             <textarea
               class="blog-form-text"
               id="blogMessage"
               placeholder="Description"
-              required
             ></textarea>
             <input
               type="submit"
-              id="add-item"
+              id="add-blog"
               class="blog-form-btn"
               value="Submit"
             />
           </form>
+          <div class="message">
+            <div class="success" id="success">Your Blog successfully Sent!</div>
+            <div class="danger" id="danger">Fields can't be Empty!</div>
+          </div>
         </div>
       </div>
     </div>
     <!--Blog List-->
     <div class="blog-list" id="blog-list">
       <div class="list-of-blogs">
-        <h2 class="blog-list-heading">List of blog</h2>
-        <div class="list-menu">
-          <div class="blog-list-menu">
-            <div>
-              <img src="" alt="Blog image" class="blog-image" id="imgPreview" />
-              <h3 class="blog-list-title" id="list-heading">California</h3>
-              <p class="blog-list-description" id="list-description">
-                It is very famous around the world<br />
-                and known as movies place
-              </p>
-              <div>
-                <button class="btn-like">Like&#128077;</button>
-                <button class="btn-subscribe">&#128276;Subscribe</button>
-              </div>
-            </div>
-            <div>
-              <img
-                src="./Images/horse.jpg"
-                alt="Blog image"
-                class="blog-image"
-              />
-              <h3 class="blog-list-title">Horse</h3>
-              <p class="blog-list-description">
-                It is very famous around the world<br />
-                and known as movies place
-              </p>
-              <div>
-                <button class="btn-like">Like&#128077;</button>
-                <button class="btn-subscribe">&#128276;Subscribe</button>
-              </div>
-            </div>
-            <div>
-              <img src="./Images/px.jpg" alt="Blog image" class="blog-image" />
-              <h3 class="blog-list-title">California</h3>
-              <p class="blog-list-description">
-                It is very famous around the world<br />and known as movies
-                place
-              </p>
-              <div>
-                <button class="btn-like">Like&#128077;</button>
-                <button class="btn-subscribe">&#128276;Subscribe</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2 class="blog-list-heading">List of blogs</h2>
+        <div id="blog-cards" class="blog-cards"></div>
       </div>
     </div>
     <!--Contact -->
@@ -303,32 +252,26 @@
         <h1 class="contact-heading">Contact</h1>
         <div class="contact-form">
           <div class="contact-message" id="contact-message"></div>
-          <form class="contact-form" id="myForm">
+          <form class="contact-form" id="contact-form">
             <input
               type="text"
               id="name"
               class="contact-form-text"
               placeholder="You Name"
-              required
             />
             <input
               type="email"
               id="email"
               class="contact-form-text"
               placeholder="Your Email"
-              required
             />
             <textarea
               id="description"
               class="contact-form-text"
               placeholder="Your Message"
-              required
             ></textarea>
             <input type="submit" class="contact-form-btn" value="submit" />
           </form>
-          <h2 class="test"></h2>
-          <h3 class="test-2"></h3>
-          <h4 class="test-3"></h4>
         </div>
       </div>
     </div>
@@ -337,7 +280,7 @@
       <div class="login-menu">
         <h2 class="login-heading">Login here</h2>
         <div class="login-form">
-          <form class="login-form" id="loginForm">
+          <form class="login-form" id="login-form">
             <div class="email-form">
               <div class="image-form">
                 <img
@@ -349,7 +292,7 @@
               <div>
                 <input
                   type="email"
-                  id="loginEmail"
+                  id="login-email"
                   class="login-form-text-1"
                   placeholder="Email"
                   required
@@ -362,6 +305,7 @@
                   src="./Images/password.png"
                   alt="password-logo"
                   class="password-key-image"
+                  required
                 />
               </div>
               <div>
@@ -432,7 +376,7 @@
       <div class="signup-menu">
         <h2 class="signup-heading">Sign up here</h2>
         <div class="signup-form">
-          <form class="signup-form">
+          <form class="signup-form" id="signup-form">
             <div class="user-form">
               <div class="user-image-form">
                 <img
@@ -480,7 +424,7 @@
               <div>
                 <input
                   type="email"
-                  id="email"
+                  id="signup-email"
                   class="signup-form-text-1"
                   placeholder="Email"
                   required
@@ -525,7 +469,6 @@
         </div>
       </div>
     </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./JS/script.js"></script>
   </body>
 </html>
