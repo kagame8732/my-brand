@@ -43,8 +43,16 @@ const blogs = blogMessages
     <div class="blog-card">
   <img src="${item.image}" alt="" class="imgPreview" />
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="list-description">${item.message}</p>
-   
+    <p class="blog-list-description" id="content">${item.message}</p>
+    <div class="comment-container">
+    <h2 class="comment-heading">Leave Us a comment</h2>
+    <form>
+    <textarea class="comment-content" placeholder="Add Comment here"></textarea>
+    <div class="comment-btn-section">
+    <input class="comment-btn type="submit" value ="submit">
+    </div>
+    </form>
+    </div>
     </div>
    `;
     return blog;
