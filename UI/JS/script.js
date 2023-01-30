@@ -18,25 +18,26 @@ function toggle(elementId, eye) {
     state = true;
   }
 }
-//Blog menu
-let blogCards = document.getElementById("blog-cards");
-let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
-document.getElementById("blog-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  let title = document.getElementById("blogTitle");
-  let message = document.getElementById("blogMessage");
-  let blogInfo = {
-    image: imageUrl,
-    title: title.value,
-    message: message.value,
-    index: blogMessages.length + 1,
-  };
-  blogMessages = [...blogMessages, blogInfo];
-  localStorage.setItem("blogInfo", JSON.stringify(blogMessages));
-  title.value = "";
-  message.value = "";
-});
+// //Blog menu
+// let blogCards = document.getElementById("blog-cards");
+// let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
+// document.getElementById("blog-form").addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   let title = document.getElementById("blogTitle");
+//   let message = document.getElementById("blogMessage");
+//   let blogInfo = {
+//     image: imageUrl,
+//     title: title.value,
+//     message: message.value,
+//     index: blogMessages.length + 1,
+//   };
+//   blogMessages = [...blogMessages, blogInfo];
+//   localStorage.setItem("blogInfo", JSON.stringify(blogMessages));
+//   title.value = "";
+//   message.value = "";
+// });
 
+let blogCards = document.getElementById("blog-cards");
 const blogs = blogMessages
   .map((item) => {
     const blog = `
@@ -64,9 +65,9 @@ blogImage.addEventListener("change", function () {
   fileReader.readAsDataURL(this.files[0]);
 });
 
-// document.getElementById("readMore-btn").addEventListener("click", function () {
-//   blogCards.classList.toggle("active");
-// });
+document.getElementById("readMore-btn").addEventListener("click", function () {
+  blogCards.classList.toggle("active");
+});
 
 // Blog image
 
