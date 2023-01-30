@@ -5,112 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/dash.css" />
+    <!-- <link rel="stylesheet" href="./CSS/style.css" /> -->
     <title>Dashboard</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
   </head>
   <body>
-    <div class="sidebar" id="dashboard">
-      <ul class="dash-nav">
-        <li>
-          <a href="#">
-            <i class="fa fa-server"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="#blog">
-            <i class="fa fa-rss-square"></i>
-            <span>Blogs</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-commenting-o"></i>
-            <span>Messages</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-cog"></i>
-            <span>Setting</span>
-          </a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-sign-out"></i>Logout</a>
-        </li>
-      </ul>
-    </div>
-    <div class="main">
-      <!-- <div class="cards-container" class="cards" id="cards"> -->
-      <div class="blogs-lists">
-        <h2 class="card-dash">dashboard</h2>
-        <h4 class="card-text">List of Messages</h4>
-        <div class="blog-cards">
-          <table>
-            <tr>
-              <th>Your Name</th>
-              <th>Email</th>
-              <th>Message</th>
-            </tr>
-            <tr>
-              <td class="you-name">Kalex</td>
-              <td>kagame8732@gmail.com</td>
-              <td>Please can you tell me how to register to your blog</td>
-            </tr>
-            <tr>
-              <td class="you-name">Kalex</td>
-              <td>kagame8732@gmail.com</td>
-              <td>Please can you tell me how to register to your blog</td>
-            </tr>
-            <tr>
-              <td class="you-name">Kalex</td>
-              <td>kagame8732@gmail.com</td>
-              <td>Please can you tell me how to register to your blog</td>
-            </tr>
-          </table>
-        </div>
+    <div class="dashboard">
+      <div class="sidebar">
+        <ul class="dash-nav">
+          <li>
+            <a href="#">
+              <i class="fa fa-server"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#blog">
+              <i class="fa fa-rss-square"></i>
+              <span>Blogs</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-commenting-o"></i>
+              <span>Messages</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-cog"></i>
+              <span>Setting</span>
+            </a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-sign-out"></i>Logout</a>
+          </li>
+        </ul>
       </div>
-      <div class="blog" id="blog">
-        <div class="blog-menu">
-          <h1 class="blog-heading">Add Blog</h1>
-          <div class="blog-form">
-            <form class="blog-form" id="blog-form">
-              <div>
-                <label for="" class="profile-picture">Profile Picture</label>
-                <input type="file" name="blog-image" id="blogImage" required />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  id="blogTitle"
+      <div class="main">
+        <div class="blogs-lists">
+          <h2 class="card-dash">dashboard</h2>
+          <div class="">
+            <h4 class="card-text">List of Messages</h4>
+            <table>
+              <tr>
+                <th>Your Name</th>
+                <th>Email</th>
+                <th>Message</th>
+              </tr>
+              <tr>
+                <td class="you-name">Kalex</td>
+                <td>kagame8732@gmail.com</td>
+                <td>Please can you tell me how to register to your blog</td>
+              </tr>
+              <tr>
+                <td class="you-name">Kalex</td>
+                <td>kagame8732@gmail.com</td>
+                <td>Please can you tell me how to register to your blog</td>
+              </tr>
+              <tr>
+                <td class="you-name">Kalex</td>
+                <td>kagame8732@gmail.com</td>
+                <td>Please can you tell me how to register to your blog</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="blog" id="blog">
+          <div class="blog-menu">
+            <h1 class="blog-heading">Blog</h1>
+            <div class="blog-form">
+              <form class="blog-form" id="blog-form">
+                <div>
+                  <input type="file" name="blog-image" id="blogImage" />
+                  <div class="imageError"></div>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="blogTitle"
+                    class="blog-form-text"
+                    placeholder="Blog Title"
+                  />
+                </div>
+                <div class="blogNameError"></div>
+                <textarea
                   class="blog-form-text"
-                  placeholder="Blog Title"
-                  required
+                  id="blogMessage"
+                  placeholder="Description"
+                ></textarea>
+                <input
+                  type="submit"
+                  id="add-blog"
+                  class="blog-form-btn"
+                  value="Submit"
                 />
-              </div>
-              <textarea
-                class="blog-form-text"
-                id="blogMessage"
-                placeholder="Description"
-                required
-              ></textarea>
-              <textarea
-                class="blog-form-text"
-                id="blogComment"
-                placeholder="Comment"
-                required
-              ></textarea>
-              <input type="submit" class="blog-form-btn" value="Submit" />
-            </form>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="blog-list" id="blog-list">
+          <div class="list-of-blogs">
+            <h2 class="blog-list-heading">List of blogs</h2>
+            <div id="blog-cards" class="blog-cards"></div>
           </div>
         </div>
       </div>
-      <!-- </div> -->
     </div>
-    <script src="./JS/dash.js"></script>
+    <script src="./JS/script.js"></script>
   </body>
 </html>

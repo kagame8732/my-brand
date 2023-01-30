@@ -232,14 +232,10 @@
               value="Submit"
             />
           </form>
-          <div class="message">
-            <div class="success" id="success">Your Blog successfully Sent!</div>
-            <div class="danger" id="danger">Fields can't be Empty!</div>
-          </div>
         </div>
       </div>
     </div>
-    <!--Blog List-->
+    <!-- Blog List -->
     <div class="blog-list" id="blog-list">
       <div class="list-of-blogs">
         <h2 class="blog-list-heading">List of blogs</h2>
@@ -258,17 +254,20 @@
               id="name"
               class="contact-form-text"
               placeholder="You Name"
+              required
             />
             <input
               type="email"
               id="email"
               class="contact-form-text"
               placeholder="Your Email"
+              required
             />
             <textarea
               id="description"
               class="contact-form-text"
               placeholder="Your Message"
+              required
             ></textarea>
             <input type="submit" class="contact-form-btn" value="submit" />
           </form>
@@ -326,13 +325,13 @@
                 </span>
               </div>
             </div>
-
             <div>
               <button class="login-form-btn">
                 Login<span class="btn-char">&#8594;</span>
               </button>
             </div>
           </form>
+          <div id="error"></div>
           <div class="redirect-links">
             <a href="#signup" class="create">create account</a>
             <a href="#forgot" class="forgot">forgot password&#63;</a>
@@ -469,6 +468,7 @@
         </div>
       </div>
     </div>
+
     <script src="./JS/script.js"></script>
   </body>
 </html>

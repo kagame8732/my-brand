@@ -40,21 +40,13 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
 const blogs = blogMessages
   .map((item) => {
     const blog = `
-    <div class="blog-card">
+    <div class="blog-card" id="blog-card">
   <img src="${item.image}" alt="" class="imgPreview" />
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
     <p class="blog-list-description" id="content">${item.message}</p>
-    <div class="comment-container">
-    <h2 class="comment-heading">Leave Us a comment</h2>
-    <form>
-    <textarea class="comment-content" placeholder="Add Comment here"></textarea>
-    <div class="comment-btn-section">
-    <input class="comment-btn type="submit" value ="submit">
+    <button class="readMore-btn"">Read me</button>
     </div>
-    </form>
-    </div>
-    </div>
-   `;
+    `;
     return blog;
   })
   .join("");
@@ -72,17 +64,12 @@ blogImage.addEventListener("change", function () {
   fileReader.readAsDataURL(this.files[0]);
 });
 
+// document.getElementById("readMore-btn").addEventListener("click", function () {
+//   blogCards.classList.toggle("active");
+// });
+
 // Blog image
-// const messageSuccesDanger = (e) => {
-//   e.preventDefault();
-//   let success = document.getElementById("success");
-//   let danger = document.getElementById("danger");
-//   if (title === "" || message === "") {
-//     danger.style.display = "block";
-//   } else {
-//     success.style.display = "block ";
-//   }
-// };
+
 // Contact
 document
   .getElementById("contact-form")
@@ -91,6 +78,7 @@ document
     let name = document.getElementById("name");
     let email = document.getElementById("email");
     let contactMessage = document.getElementById("description");
+
     let contactMessages = JSON.parse(localStorage.getItem("contactInfo")) || [];
 
     let message = {
@@ -145,7 +133,6 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
   };
   signupUsers = [...signupUsers, signupInfo];
   localStorage.setItem("signupInfo", JSON.stringify(signupUsers));
-  alert("User created");
   firstName.value = "";
   lastName.value = "";
   signupEmail.value = "";
