@@ -19,6 +19,26 @@ function toggle(elementId, eye) {
   }
 }
 // //Blog menu
+let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
+let blogCards = document.getElementById("blog-cards");
+
+const blogList = blogMessages
+  .map((item) => {
+    const blog = `
+    <div class="blog-card" id="blog-card">
+  <img src="${item.image}" alt="" class="imgPreview" />
+   <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
+    <p class="blog-list-description" id="content">${item.message}</p>
+    <button onclick="readMore()" class="readMore-btn">Read me</button>
+    </div>
+    `;
+    return blog;
+  })
+  .join("");
+
+window.addEventListener("load", function () {
+  blogCards.innerHTML = blogList;
+});
 // let blogCards = document.getElementById("blog-cards");
 // let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
 // document.getElementById("blog-form").addEventListener("submit", function (e) {
@@ -37,37 +57,9 @@ function toggle(elementId, eye) {
 //   message.value = "";
 // });
 
-let blogCards = document.getElementById("blog-cards");
-const blogs = blogMessages
-  .map((item) => {
-    const blog = `
-    <div class="blog-card" id="blog-card">
-  <img src="${item.image}" alt="" class="imgPreview" />
-   <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="content">${item.message}</p>
-    <button class="readMore-btn"">Read me</button>
-    </div>
-    `;
-    return blog;
-  })
-  .join("");
-window.addEventListener("load", function () {
-  blogCards.innerHTML = blogs;
-});
-
-const blogImage = document.getElementById("blogImage");
-let imageUrl;
-blogImage.addEventListener("change", function () {
-  const fileReader = new FileReader();
-  fileReader.addEventListener("load", () => {
-    imageUrl = fileReader.result;
-  });
-  fileReader.readAsDataURL(this.files[0]);
-});
-
-document.getElementById("readMore-btn").addEventListener("click", function () {
-  blogCards.classList.toggle("active");
-});
+// document.getElementById("readMore-btn").addEventListener("click", function () {
+//   blogCards.classList.toggle("active");
+// });
 
 // Blog image
 

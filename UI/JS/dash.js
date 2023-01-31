@@ -24,12 +24,13 @@ const blogs = blogMessages
   <img src="${item.image}" alt="" class="imgPreview" />
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
     <p class="blog-list-description" id="content">${item.message}</p>
-    <button class="readMore-btn"">Read me</button>
+    <button onclick="readMore()" class="readMore-btn">Read me</button>
     </div>
     `;
     return blog;
   })
   .join("");
+
 window.addEventListener("load", function () {
   blogCards.innerHTML = blogs;
 });
