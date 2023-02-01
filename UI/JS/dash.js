@@ -25,6 +25,10 @@ const blogs = blogMessages
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
     <p class="blog-list-description" id="content">${item.message}</p>
     <button onclick="readMore()" class="readMore-btn">Read me</button>
+    <div class="del-edit">
+    <button onclick="deleteMessage()" class="delete-btn">Delete</button>
+    <button class="edit-btn">Edit</button>
+    </div>
     </div>
     `;
     return blog;
@@ -43,4 +47,45 @@ blogImage.addEventListener("change", function () {
     imageUrl = fileReader.result;
   });
   fileReader.readAsDataURL(this.files[0]);
+});
+//Delete
+
+// const deleteMessage = (index) => {
+//   const allMessagess = JSON.parse(localStorage.getItem("blogInfo"));
+//   const newMessages = allMessagess.filter((message, i) => i != index);
+//   localStorage.setItem("blogInfo", JSON.stringify(newMessages));
+// };
+
+//Contact
+let contactMessages = JSON.parse(localStorage.getItem("contactInfo")) || [];
+let messagesList = document.getElementById("contactMessages");
+
+const contacts = contactMessages
+  .map((item) => {
+    const contact = `
+   <table class="table">
+              <thead>
+              <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+              </thead>
+              <tbody>
+                <tr>
+                 <td data-label="contact No">${item.index}</td>
+                  <td data-label="contact Name">${item.name}</td>
+                  <td data-label="contact Email">${item.email}</td>
+                  <td data-label="contact-message">${item.contactMessage}</td>
+                  </tr>
+                  </tbody>
+                  </table>                
+                  <button class="contact-delete">Delete</button>
+                  </div>
+  `;
+    return contact;
+  })
+  .join("");
+
+window.addEventListener("load", function () {
+  messagesList.innerHTML = contacts;
 });
