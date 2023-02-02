@@ -27,8 +27,6 @@
           <li><a href="#blog-list">List of Blogs</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#login">&nbsp;&nbsp;&nbsp;Login</a></li>
-          <li><a href="#blog">Add Blog</a></li>
-          <!-- <li><a href="./dashboard.html">Dashboard</a></li> -->
         </ul>
       </div>
     </nav>
@@ -201,45 +199,8 @@
         />
       </div>
     </div>
-    <!--Blog-->
-    <div class="blog" id="blog">
-      <div class="blog-menu">
-        <h1 class="blog-heading">Blog</h1>
-        <div class="blog-form">
-          <form class="blog-form" id="blog-form">
-            <div>
-              <input type="file" name="blog-image" id="blogImage" />
-              <div class="imageError"></div>
-            </div>
-            <div>
-              <input
-                type="text"
-                id="blogTitle"
-                class="blog-form-text"
-                placeholder="Blog Title"
-              />
-            </div>
-            <div class="blogNameError"></div>
-            <textarea
-              class="blog-form-text"
-              id="blogMessage"
-              placeholder="Description"
-            ></textarea>
-            <input
-              type="submit"
-              id="add-blog"
-              class="blog-form-btn"
-              value="Submit"
-            />
-          </form>
-          <div class="message">
-            <div class="success" id="success">Your Blog successfully Sent!</div>
-            <div class="danger" id="danger">Fields can't be Empty!</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Blog List-->
+
+    <!-- Blog List -->
     <div class="blog-list" id="blog-list">
       <div class="list-of-blogs">
         <h2 class="blog-list-heading">List of blogs</h2>
@@ -258,17 +219,20 @@
               id="name"
               class="contact-form-text"
               placeholder="You Name"
+              required
             />
             <input
               type="email"
               id="email"
               class="contact-form-text"
               placeholder="Your Email"
+              required
             />
             <textarea
               id="description"
               class="contact-form-text"
               placeholder="Your Message"
+              required
             ></textarea>
             <input type="submit" class="contact-form-btn" value="submit" />
           </form>
@@ -326,13 +290,13 @@
                 </span>
               </div>
             </div>
-
             <div>
               <button class="login-form-btn">
                 Login<span class="btn-char">&#8594;</span>
               </button>
             </div>
           </form>
+          <div id="error"></div>
           <div class="redirect-links">
             <a href="#signup" class="create">create account</a>
             <a href="#forgot" class="forgot">forgot password&#63;</a>
@@ -469,6 +433,7 @@
         </div>
       </div>
     </div>
+
     <script src="./JS/script.js"></script>
   </body>
 </html>

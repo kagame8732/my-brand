@@ -5,10 +5,12 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   width: 100%;
   height: 100%;
 }
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -24,11 +26,13 @@ body {
   font-size: 1.5rem;
   margin: 0.5rem;
 }
+
 .navbar-links ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
+
 .navbar-links li {
   list-style: none;
 }
@@ -42,18 +46,22 @@ body {
   font-weight: 600;
   width: 100%;
 }
+
 .navbar-links li .active {
   border-bottom: 5px solid rgb(231, 156, 156);
   width: 100%;
   border-radius: 1px;
   transition: 0.5s ease;
 }
+
 .navbar-links li:hover {
   background-color: #555;
 }
+
 .sub-menu-1 {
   display: none;
 }
+
 .navbar-links ul li:hover .sub-menu-1 {
   display: block;
   position: absolute;
@@ -70,37 +78,46 @@ body {
   width: 30px;
   height: 21px;
 }
+
 .toggle-button .bar {
   height: 3px;
   width: 100%;
   background-color: #fff;
   border-radius: 10px;
 }
+
 @media screen and (max-width: 540px) {
   .toggle-button {
     display: flex;
   }
+
   .navbar-links {
     display: none;
     width: 100%;
   }
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .navbar-links ul {
     width: 100%;
     flex-direction: column;
   }
+
   .navbar-links li {
     text-align: center;
   }
+
   .navbar-links li a {
     padding: 0.3rem 0.7rem;
   }
+
   .navbar-links.active {
     display: flex;
   }
+
   .about-container,
   .skills-technical,
   .portfolio-menu,
@@ -121,14 +138,17 @@ body {
   text-align: center;
   border-radius: 0.2rem;
 }
+
 .hire:hover {
   background-color: #fcc028;
   color: #000;
   border: none;
 }
+
 .hire:hover::after {
   transform: scaleX(0.2) scaleY(1.6);
 }
+
 /* Nav-header */
 .nav-header {
   display: flex;
@@ -137,47 +157,56 @@ body {
   padding: 4rem;
   gap: 1rem;
 }
+
 .heading {
   font-size: 34px;
   font-weight: 700;
   color: #000;
   margin-bottom: 5px;
 }
+
 .heading-text {
   font-size: 18px;
   font-weight: 500;
   color: #000;
   letter-spacing: 0.5px;
 }
+
 .logo {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
+
 .download {
   display: flex;
   margin-top: 1rem;
 }
+
 .download-image {
   width: 2rem;
   height: 2rem;
   /* margin-top: 20px; */
 }
+
 .cv {
   font-size: 1.5rem;
   font-weight: 500;
   display: inline-block;
   margin-top: 4px;
 }
+
 .about-position {
   color: #5e6fc5;
   font-size: 24px;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
+
 .social-medias {
   display: flex;
 }
+
 .twitter-logo,
 .linkedin-logo,
 .github-logo,
@@ -193,6 +222,7 @@ body {
   padding: 5rem;
   margin-top: 4rem;
 }
+
 .tech-skills {
   text-transform: uppercase;
   color: #161616;
@@ -209,16 +239,18 @@ body {
   column-gap: 2rem;
   padding: 5rem;
 }
-@media screen and (max-width:540px) {
-  .languages{
+
+@media screen and (max-width: 540px) {
+  .languages {
     display: grid;
-      grid-template-columns: 1fr 1fr;
-      place-items: center;
-      place-content: center;
-      column-gap: 2rem;
-      padding: 5rem;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    place-content: center;
+    column-gap: 2rem;
+    padding: 5rem;
   }
 }
+
 .html-container,
 .css-container,
 .js-container,
@@ -227,6 +259,7 @@ body {
 .trello-container {
   display: flex;
 }
+
 .html-desc {
   font-size: 20px;
   color: #08220e;
@@ -242,6 +275,7 @@ body {
   width: 3rem;
   height: 3rem;
 }
+
 .html-text,
 .css-text,
 .js-text,
@@ -262,6 +296,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .portfolio-heading {
   color: #207733;
   font-size: 1.8rem;
@@ -269,10 +304,12 @@ body {
   text-align: center;
   padding: 1rem;
 }
+
 .portfolio-text {
   text-align: center;
   font-size: 17px;
 }
+
 .sawa-image {
   width: 100%;
   padding: 3rem;
@@ -280,8 +317,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
-
 }
+
 /* Blog */
 .blog {
   margin-top: 2.5rem;
@@ -295,17 +332,14 @@ body {
   color: #207733;
   text-transform: uppercase;
 }
+
 .blog-form {
   max-width: 600px;
   margin: auto;
   padding: 0 5px;
   overflow: hidden;
 }
-.profile-picture {
-  display: block;
-  font-size: 25px;
-  font-weight: 500;
-}
+
 .blog-form-text {
   display: block;
   width: 100%;
@@ -319,13 +353,16 @@ body {
   transition: 0.5s;
   border-radius: 5px;
 }
+
 .blog-form-text:focus {
   box-shadow: 0 0 10px 4px #34495e;
 }
+
 textarea.blog-form-text {
   resize: none;
   height: 120px;
 }
+
 .blog-form-btn {
   width: 100%;
   border: 0;
@@ -338,6 +375,7 @@ textarea.blog-form-text {
   font-size: 1rem;
   font-weight: 600;
 }
+
 .blog-form-btn:hover {
   background: #051b0a;
 }
@@ -349,6 +387,7 @@ textarea.blog-form-text {
   display: flex;
   justify-content: center;
 }
+
 .message .success {
   font-size: 20px;
   position: absolute;
@@ -356,6 +395,7 @@ textarea.blog-form-text {
   animation: buttons 0.3s linear;
   display: none;
 }
+
 .message .danger {
   font-size: 20px;
   position: absolute;
@@ -368,9 +408,11 @@ textarea.blog-form-text {
   0% {
     transform: scale(0.1);
   }
+
   50% {
     transform: scale(0.5);
   }
+
   100% {
     transform: scale(1);
   }
@@ -395,18 +437,20 @@ textarea.blog-form-text {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 2rem;
-    place-items: center;
-      place-content: center;
+  place-items: center;
+  place-content: center;
 }
+
 .blog-card {
   background-color: #f1f2f5;
   box-shadow: 0 0 8px 4px #34495e;
-  width: 300px;
-  height: 350px;
+  width: 350px;
   padding: 20px 20px 20px;
   word-wrap: break-word;
 }
+
 .blog-list-heading {
+  font-size: 2rem;
   text-align: center;
   color: #207733;
   text-transform: uppercase;
@@ -418,33 +462,79 @@ textarea.blog-form-text {
   text-align: center;
   padding: 5px;
 }
+
 .blog-list-description {
   text-align: center;
   font-size: 18px;
+  /* display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; */
 }
 
-.blog-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
-@media screen and (max-width:995px) {
-  .blog-cards{
+
+
+@media screen and (max-width: 995px) {
+  .blog-cards {
     display: grid;
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2%;
   }
 }
-@media screen and (max-width:540px) {
-  .blog-cards{
+
+@media screen and (max-width: 540px) {
+  .blog-cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2%;
   }
-  .blog-card{
+
+  .blog-card {
     place-self: center;
   }
 }
+
+.comment-heading {
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.comment-content {
+  height: 30px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  /* background-color: transparent; */
+  margin-bottom: 10px;
+  resize: none;
+  outline: none;
+}
+
+.comment-btn {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: rgb(43, 43, 202);
+  color: #fff;
+  text-align: center;
+}
+.readMore-btn{
+  display: inline-block;
+  color: #fff;
+  background-color: #2196f3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+
 /*Contact */
 .contact-heading,
 .login-heading,
@@ -453,21 +543,24 @@ textarea.blog-form-text {
   color: #207733;
   text-transform: uppercase;
 }
+
 .contact {
   width: 100%;
   /* height: 37rem; */
   padding: 5rem;
-
 }
+
 .contact-message {
   color: red;
 }
+
 .contact-form {
   max-width: 600px;
   margin: auto;
   padding: 0 5px;
   overflow: hidden;
 }
+
 .contact-form-text {
   display: block;
   width: 100%;
@@ -481,13 +574,16 @@ textarea.blog-form-text {
   transition: 0.5s;
   border-radius: 5px;
 }
+
 .contact-form-text:focus {
   box-shadow: 0 0 10px 4px #34495e;
 }
+
 textarea.contact-form-text {
   resize: none;
   height: 120px;
 }
+
 .contact-form-btn {
   border: 0;
   background: #207733;
@@ -499,24 +595,29 @@ textarea.contact-form-text {
   font-size: 1rem;
   font-weight: 600;
 }
+
 .contact-form-btn:hover {
   background: #051b0a;
 }
+
 /* Login */
 .login {
   width: 100%;
   /* height: 37rem; */
   padding: 8rem;
 }
+
 .login-form {
   max-width: 600px;
   margin: auto;
   padding: 0 5px;
   overflow: hidden;
 }
+
 .email-form {
   position: relative;
 }
+
 .image-form {
   position: absolute;
   top: 1rem;
@@ -635,6 +736,7 @@ textarea.contact-form-text {
   font-size: 1rem;
   font-weight: 700;
 }
+
 .fa-check-circle {
   background-color: #207733;
   font-size: 2rem;
@@ -656,7 +758,7 @@ textarea.contact-form-text {
 .signup {
   width: 100%;
   /* height: 35rem; */
-/* padding: 15rem; */
+  /* padding: 15rem; */
 }
 
 .signup-form {
@@ -798,4 +900,97 @@ textarea.contact-form-text {
   color: #000;
   font-size: 1rem;
   font-weight: 700;
+}
+
+/* Dashboard  */
+.dashboard{
+  width: 100%;
+}
+.sidebar {
+  position: sticky;
+  background-color: #555;
+  width: 180px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.dash-nav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  margin-left: 2rem;
+
+}
+
+.dash-nav li {
+  margin: 20px 0;
+}
+
+.sidebar .dash-nav li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+
+
+}
+
+.dash-nav .fa {
+  color: #fff;
+}
+
+.main {
+  margin-left: 200px;
+
+}
+
+table {
+  background-color: rgb(192, 192, 192);
+  width: 60%;
+  height: 400px;
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th,
+td {
+  padding: 10px 15px;
+}
+
+th {
+  color: #fff;
+  background-color: #207733;
+  text-transform: uppercase;
+  height: 5px;
+}
+
+.you-name {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.card-dash {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 8px;
+}
+
+.card-text {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 900;
+  color: #207733;
+  padding: 1rem;
 }
