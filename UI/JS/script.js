@@ -19,56 +19,43 @@ function toggle(elementId, eye) {
   }
 }
 // //Blog menu
+
+// let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
+// let blogCards = document.getElementById("blog-cards");
+
+// const blogList = blogMessages
+//   .map((item) => {
+//     const blog = `
+//     <div class="blog-card" id="blog-card">
+//   <img src="${item.image}" alt="" class="imgPreview" />
+//    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
+//     <p class="blog-list-description" id="content">${item.message}</p>
+//     <button class="readMore-btn">Read me</button>
+//     </div>
+//     `;
+//     return blog;
+//   })
+//   .join("");
+// window.addEventListener("load", function () {
+//   blogCards.innerHTML = blogList;
+// });
+
+//Other option
 let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
 let blogCards = document.getElementById("blog-cards");
 
-const blogList = blogMessages
-  .map((item) => {
-    const blog = `
+if (blogMessages) {
+  blogMessages.forEach((blogMessage) => {
+    blogCards.innerHTML += `
     <div class="blog-card" id="blog-card">
-  <img src="${item.image}" alt="" class="imgPreview" />
-   <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="content">${item.message}</p>
-    <div id="display-comment">
-    </div>
-     <div class="comment">
-      <form id="comment-form">
-        <div>
-          <input type="text" placeholder="Name" id="comment-name" required />
-        </div>
-        <div>
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            id="comment-description"
-            placeholder="Coment of blog"
-            required
-          ></textarea>
-        </div>
-        <button onclick="addComment()">Submit</button>
-      </form>
-    </div>
-    <button class="readMore-btn">Read me</button>
+     <img src="${blogMessage.image}" alt="" class="imgPreview" />
+   <h3 class="blog-list-title" id="list-heading">${blogMessage.title}</h3>
+   <p class="blog-list-description" id="content">${blogMessage.message}</p>
+   <a href="./readMe.html">Read more</a>
     </div>
     `;
-    return blog;
-  })
-  .join("");
-window.addEventListener("load", function () {
-  blogCards.innerHTML = blogList;
-});
-function addComment() {
-  const blogFormName = document.getElementById("comment-name");
-  const blogFormmessage = document.getElementById("comment-description");
-  const comment = {
-    name: blogFormName.value,
-    message: blogFormmessage.value,
-  };
-  console.log(comment.name);
+  });
 }
-
 // Contact
 document
   .getElementById("contact-form")

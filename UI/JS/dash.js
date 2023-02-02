@@ -24,9 +24,8 @@ const blogs = blogMessages
   <img src="${item.image}" alt="" class="imgPreview" />
    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
     <p class="blog-list-description" id="content">${item.message}</p>
-    <button onclick="readMore()" class="readMore-btn">Read me</button>
     <div class="del-edit">
-    <button onclick="deleteMessage()" class="delete-btn">Delete</button>
+    <button onclick="deleteMessage(${item.index})" class="blog-delete">Delete</button>
     <button class="edit-btn">Edit</button>
     </div>
     </div>
@@ -48,13 +47,29 @@ blogImage.addEventListener("change", function () {
   });
   fileReader.readAsDataURL(this.files[0]);
 });
+
 //Delete
 
-// const deleteMessage = (index) => {
-//   const allMessagess = JSON.parse(localStorage.getItem("blogInfo"));
-//   const newMessages = allMessagess.filter((message, i) => i != index);
-//   localStorage.setItem("blogInfo", JSON.stringify(newMessages));
-// };
+function deleteMessage(index) {
+  blogMessages = blogMessages.filter((blog) => blog.index !== index);
+  localStorage.setItem("blogInfo", JSON.stringify(blogMessages));
+  blogCards.innerHTML = blogMessages
+    .map((item) => {
+      const blog = `
+      <div class="blog-card" id="blog-card">
+        <img src="${item.image}" alt="" class="imgPreview" />
+        <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
+        <p class="blog-list-description" id="content">${item.message}</p>
+        <div class="del-edit">
+          <button onclick="deleteMessage(${item.index})" class="blog-delete">Delete</button>
+          <button class="edit-btn">Edit</button>
+        </div>
+      </div>
+      `;
+      return blog;
+    })
+    .join("");
+}
 
 //Contact
 let contactMessages = JSON.parse(localStorage.getItem("contactInfo")) || [];
