@@ -31,6 +31,25 @@ const blogList = blogMessages
     <p class="blog-list-description" id="content">${item.message}</p>
     <div id="display-comment">
     </div>
+     <div class="comment">
+      <form id="comment-form">
+        <div>
+          <input type="text" placeholder="Name" id="comment-name" required />
+        </div>
+        <div>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            id="comment-description"
+            placeholder="Coment of blog"
+            required
+          ></textarea>
+        </div>
+        <button onclick="addComment()">Submit</button>
+      </form>
+    </div>
     <button class="readMore-btn">Read me</button>
     </div>
     `;
