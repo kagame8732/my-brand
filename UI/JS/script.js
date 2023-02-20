@@ -19,56 +19,43 @@ function toggle(elementId, eye) {
   }
 }
 // //Blog menu
+
+// let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
+// let blogCards = document.getElementById("blog-cards");
+
+// const blogList = blogMessages
+//   .map((item) => {
+//     const blog = `
+//     <div class="blog-card" id="blog-card">
+//   <img src="${item.image}" alt="" class="imgPreview" />
+//    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
+//     <p class="blog-list-description" id="content">${item.message}</p>
+//     <button class="readMore-btn">Read me</button>
+//     </div>
+//     `;
+//     return blog;
+//   })
+//   .join("");
+// window.addEventListener("load", function () {
+//   blogCards.innerHTML = blogList;
+// });
+
+//Other option
 let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
 let blogCards = document.getElementById("blog-cards");
 
-const blogList = blogMessages
-  .map((item) => {
-    const blog = `
+if (blogMessages) {
+  blogMessages.forEach((blogMessage) => {
+    blogCards.innerHTML += `
     <div class="blog-card" id="blog-card">
-  <img src="${item.image}" alt="" class="imgPreview" />
-   <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="content">${item.message}</p>
-    <div id="display-comment">
-    </div>
-     <div class="comment">
-      <form id="comment-form">
-        <div>
-          <input type="text" placeholder="Name" id="comment-name" required />
-        </div>
-        <div>
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            id="comment-description"
-            placeholder="Coment of blog"
-            required
-          ></textarea>
-        </div>
-        <button onclick="addComment()">Submit</button>
-      </form>
-    </div>
-    <button class="readMore-btn">Read me</button>
+     <img src="${blogMessage.image}" alt="" class="imgPreview" />
+   <h3 class="blog-list-title" id="list-heading">${blogMessage.title}</h3>
+   <p class="blog-list-description" id="content">${blogMessage.message}</p>
+   <a href="./readMe.html" class="read-more">Read more</a>
     </div>
     `;
-    return blog;
-  })
-  .join("");
-window.addEventListener("load", function () {
-  blogCards.innerHTML = blogList;
-});
-function addComment() {
-  const blogFormName = document.getElementById("comment-name");
-  const blogFormmessage = document.getElementById("comment-description");
-  const comment = {
-    name: blogFormName.value,
-    message: blogFormmessage.value,
-  };
-  console.log(comment.name);
+  });
 }
-
 // Contact
 document
   .getElementById("contact-form")
@@ -77,21 +64,33 @@ document
     let name = document.getElementById("name");
     let email = document.getElementById("email");
     let contactMessage = document.getElementById("description");
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let messageError = document.getElementById("messageError");
+    let submitMessage = document.getElementById("submitMessage");
 
-    let contactMessages = JSON.parse(localStorage.getItem("contactInfo")) || [];
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    let message = {
+    let data = {
       name: name.value,
       email: email.value,
-      contactMessage: contactMessage.value,
-      index: contactMessages.length + 1,
+      message: contactMessage.value,
     };
-    contactMessages = [...contactMessages, message];
-    localStorage.setItem("contactInfo", JSON.stringify(contactMessages));
 
-    name.value = "";
-    email.value = "";
-    contactMessage.value = "";
+    let requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: JSON.stringify(data),
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:5000/api/contacts", requestOptions)
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+    submitMessage.textContent = "Thank you for contact us";
+    document.getElementById("contact-form").reset();
   });
 
 // Login
