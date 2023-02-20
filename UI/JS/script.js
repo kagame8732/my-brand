@@ -51,7 +51,7 @@ if (blogMessages) {
      <img src="${blogMessage.image}" alt="" class="imgPreview" />
    <h3 class="blog-list-title" id="list-heading">${blogMessage.title}</h3>
    <p class="blog-list-description" id="content">${blogMessage.message}</p>
-   <a href="./readMe.html">Read more</a>
+   <a href="./readMe.html" class="read-more">Read more</a>
     </div>
     `;
   });
@@ -64,21 +64,33 @@ document
     let name = document.getElementById("name");
     let email = document.getElementById("email");
     let contactMessage = document.getElementById("description");
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let messageError = document.getElementById("messageError");
+    let submitMessage = document.getElementById("submitMessage");
 
-    let contactMessages = JSON.parse(localStorage.getItem("contactInfo")) || [];
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    let message = {
+    let data = {
       name: name.value,
       email: email.value,
-      contactMessage: contactMessage.value,
-      index: contactMessages.length + 1,
+      message: contactMessage.value,
     };
-    contactMessages = [...contactMessages, message];
-    localStorage.setItem("contactInfo", JSON.stringify(contactMessages));
 
-    name.value = "";
-    email.value = "";
-    contactMessage.value = "";
+    let requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: JSON.stringify(data),
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:5000/api/contacts", requestOptions)
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+    submitMessage.textContent = "Thank you for contact us";
+    document.getElementById("contact-form").reset();
   });
 
 // Login

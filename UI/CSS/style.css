@@ -499,16 +499,15 @@ textarea.blog-form-text {
   margin-top: 15px;
 }
 
-.comment-content {
+/* .comment-content {
   height: 30px;
   width: 100%;
   border: none;
   border-bottom: 2px solid #aaa;
-  /* background-color: transparent; */
   margin-bottom: 10px;
   resize: none;
   outline: none;
-}
+} */
 
 .comment-btn {
   padding: 10px 15px;
@@ -522,7 +521,7 @@ textarea.blog-form-text {
   color: #fff;
   text-align: center;
 }
-.readMore-btn{
+.read-more{
   display: inline-block;
   color: #fff;
   background-color: #2196f3;
@@ -559,6 +558,7 @@ textarea.blog-form-text {
   margin: auto;
   padding: 0 5px;
   overflow: hidden;
+
 }
 
 .contact-form-text {
@@ -594,10 +594,23 @@ textarea.contact-form-text {
   transition: 0.5s;
   font-size: 1rem;
   font-weight: 600;
+  display: block;
 }
 
 .contact-form-btn:hover {
   background: #051b0a;
+}
+.input-group span {
+
+  bottom: 12px;
+  right: 17px;
+  font-size: 14px;
+  color: green;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+.submitMessage{
 }
 
 /* Login */

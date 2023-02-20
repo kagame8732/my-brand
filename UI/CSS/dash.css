@@ -133,13 +133,25 @@ body {
     content: attr(data-label);
     position: absolute;
     left: 0;
-    width: 50%;
+    width: 100%;
     padding-left: 15px;
     font-weight: bold;
     text-align: left;
   }
 }
-
+/* Contact Menu */
+.contactMessages{
+  display: flex;
+  justify-content: center;
+  }
+  .delete-button{
+    background-color: red;
+    color: white;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+  }
 /* Blog */
 .blog {
   margin-top: 2.5rem;
