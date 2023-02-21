@@ -600,7 +600,7 @@ textarea.contact-form-text {
 .contact-form-btn:hover {
   background: #051b0a;
 }
-.input-group span {
+.input-group span,#submitMessages {
 
   bottom: 12px;
   right: 17px;
@@ -610,8 +610,7 @@ textarea.contact-form-text {
   font-weight: 700;
   text-align: center;
 }
-.submitMessage{
-}
+
 
 /* Login */
 .login {

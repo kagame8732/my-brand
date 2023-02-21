@@ -469,3 +469,12 @@ textarea.blog-form-text {
   justify-content: space-around;
   padding: 0.5rem;
 }
+#blogSubmit{
+  bottom: 12px;
+    right: 17px;
+    font-size: 14px;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
