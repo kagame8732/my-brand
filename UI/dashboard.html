@@ -18,7 +18,7 @@
             </a>
           </li>
           <li>
-            <a href="#blog">
+            <a href="#blog-list">
               <i class="fa fa-rss-square"></i>
               <span>Blogs</span>
             </a>
@@ -72,6 +72,7 @@
                     id="blogTitle"
                     class="blog-form-text"
                     placeholder="Blog Title"
+                    required
                   />
                 </div>
                 <div class="blogNameError"></div>
@@ -79,7 +80,9 @@
                   class="blog-form-text"
                   id="blogMessage"
                   placeholder="Description"
+                  required
                 ></textarea>
+                <span id="blogSubmit"></span>
                 <input
                   type="submit"
                   id="add-blog"

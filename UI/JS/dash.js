@@ -1,42 +1,69 @@
 //Blog menu
 let blogCards = document.getElementById("blog-cards");
-let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
 document.getElementById("blog-form").addEventListener("submit", function (e) {
   e.preventDefault();
   let title = document.getElementById("blogTitle");
-  let message = document.getElementById("blogMessage");
-  let blogInfo = {
-    image: imageUrl,
+  let description = document.getElementById("blogMessage");
+  let blogSubmit = document.getElementById("blogSubmit");
+  let imageFile = document.getElementById("blogImage").files[0];
+
+  let myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  let data = {
     title: title.value,
-    message: message.value,
-    index: blogMessages.length + 1,
+    description: description.value,
   };
-  blogMessages = [...blogMessages, blogInfo];
-  localStorage.setItem("blogInfo", JSON.stringify(blogMessages));
-  title.value = "";
-  message.value = "";
+  // let data = new FormData(); // Use FormData to send the image file along with the other data
+  // data.append("title", title.value);
+  // data.append("description", description.value);
+  // data.append("image", imageFile);
+
+  let requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: JSON.stringify(data),
+    redirect: "follow",
+  };
+
+  fetch("http://localhost:5000/api/blogs", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+  blogSubmit.textContent = "Blog added well";
+  document.getElementById("blog-form").reset();
+  // let blogInfo = {
+  //   image: imageUrl,
+  //   title: title.value,
+  //   message: message.value,
+  //   index: blogMessages.length + 1,
+  // };
+  // blogMessages = [...blogMessages, blogInfo];
+  // localStorage.setItem("blogInfo", JSON.stringify(blogMessages));
+  // title.value = "";
+  // message.value = "";
 });
 
-const blogs = blogMessages
-  .map((item) => {
-    const blog = `
-    <div class="blog-card" id="blog-card">
-  <img src="${item.image}" alt="" class="imgPreview" />
-   <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-    <p class="blog-list-description" id="content">${item.message}</p>
-    <div class="del-edit">
-    <button onclick="deleteBlog(${item.index})" class="blog-delete">Delete</button>
-    <button class="edit-btn">Edit</button>
-    </div>
-    </div>
-    `;
-    return blog;
-  })
-  .join("");
+// const blogs = blogMessages
+//   .map((item) => {
+//     const blog = `
+//     <div class="blog-card" id="blog-card">
+//   <img src="${item.image}" alt="" class="imgPreview" />
+//    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
+//     <p class="blog-list-description" id="content">${item.message}</p>
+//     <div class="del-edit">
+//     <button onclick="deleteBlog(${item.index})" class="blog-delete">Delete</button>
+//     <button class="edit-btn">Edit</button>
+//     </div>
+//     </div>
+//     `;
+//     return blog;
+//   })
+//   .join("");
 
-window.addEventListener("load", function () {
-  blogCards.innerHTML = blogs;
-});
+// window.addEventListener("load", function () {
+//   blogCards.innerHTML = blogs;
+// });
 
 const blogImage = document.getElementById("blogImage");
 let imageUrl;
@@ -72,57 +99,6 @@ function deleteBlog(index) {
 }
 
 //Contact
-
-// const url = "http://localhost:5000/api/contacts";
-// fetch(url)
-//   .then((response) => {
-//     if (response.ok) {
-//       return response.json();
-//     } else {
-//       throw new Error("Something went wrong");
-//     }
-//   })
-//   .then((data) => {
-//     const table = document.createElement("table");
-//     table.style.width = "50%";
-//     table.style.padding = "1rem";
-//     table.style.borderCollapse = "collapse";
-//     table.style.border = "1px solid black";
-//     table.setAttribute("border", "1");
-
-//     // create table header row
-//     const headerRow = document.createElement("tr");
-//     const nameHeader = document.createElement("th");
-//     nameHeader.textContent = "Name";
-//     const emailHeader = document.createElement("th");
-//     emailHeader.textContent = "Email";
-//     const messageHeader = document.createElement("th");
-//     messageHeader.textContent = "Message";
-//     headerRow.appendChild(nameHeader);
-//     headerRow.appendChild(emailHeader);
-//     headerRow.appendChild(messageHeader);
-//     table.appendChild(headerRow);
-
-//     data.forEach((item) => {
-//       const bodyRow = document.createElement("tr");
-//       const nameData = document.createElement("td");
-//       nameData.textContent = item.name;
-//       const emailData = document.createElement("td");
-//       emailData.textContent = item.email;
-//       const messageData = document.createElement("td");
-//       messageData.textContent = item.message;
-//       bodyRow.appendChild(nameData);
-//       bodyRow.appendChild(emailData);
-//       bodyRow.appendChild(messageData);
-//       table.appendChild(bodyRow);
-//     });
-
-//     const tableContainer = document.getElementById("contactMessages");
-//     tableContainer.appendChild(table);
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });
 const url = "http://localhost:5000/api/contacts";
 fetch(url)
   .then((response) => {
@@ -140,7 +116,6 @@ fetch(url)
     table.style.border = "1px solid black";
     table.setAttribute("border", "1");
 
-    // create table header row
     const headerRow = document.createElement("tr");
     const nameHeader = document.createElement("th");
     nameHeader.textContent = "Name";

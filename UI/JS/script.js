@@ -46,6 +46,7 @@ let blogCards = document.getElementById("blog-cards");
 
 if (blogMessages) {
   blogMessages.forEach((blogMessage) => {
+    0;
     blogCards.innerHTML += `
     <div class="blog-card" id="blog-card">
      <img src="${blogMessage.image}" alt="" class="imgPreview" />
@@ -98,6 +99,7 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
   e.preventDefault();
   let email = document.getElementById("login-email");
   let password = document.getElementById("loginPassword");
+
   let users = JSON.parse(localStorage.getItem("userInfo")) || [];
 
   let userInfo = {
@@ -118,21 +120,31 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
   e.preventDefault();
   let firstName = document.getElementById("firstName");
   let lastName = document.getElementById("lastName");
-  let signupEmail = document.getElementById("signup-email");
-  let signupPassword = document.getElementById("signup-password");
-  let signupUsers = JSON.parse(localStorage.getItem("signupInfo")) || [];
+  let email = document.getElementById("signup-email");
+  let password = document.getElementById("signup-password");
+  let submitMessage = document.getElementById("submitMessages");
 
-  let signupInfo = {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var data = {
     firstName: firstName.value,
     lastName: lastName.value,
-    signupEmail: signupEmail.value,
-    signupPassword: signupPassword.value,
-    index: signupUsers.length + 1,
+    email: email.value,
+    password: password.value,
   };
-  signupUsers = [...signupUsers, signupInfo];
-  localStorage.setItem("signupInfo", JSON.stringify(signupUsers));
-  firstName.value = "";
-  lastName.value = "";
-  signupEmail.value = "";
-  signupPassword.value = "";
+
+  var requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: JSON.stringify(data),
+    redirect: "follow",
+  };
+
+  fetch("http://localhost:5000/api/signup", requestOptions)
+    .then((response) => response.json())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+  submitMessage.textContent = "User registered successful";
+  document.getElementById("signup-form").reset();
 });
