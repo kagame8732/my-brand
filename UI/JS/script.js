@@ -91,28 +91,82 @@ document
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
     submitMessage.textContent = "Thank you for contact us";
-    document.getElementById("contact-form").reset();
+    form.reset();
   });
 
 // Login
+let loginEmail = document.getElementById("loginEmail");
+let loginPassword = document.getElementById("loginPassword");
+let emailError = document.getElementById("loginError");
+let passwordError = document.getElementById("passwordError");
+let submitError = document.getElementById("submitError");
+let form = document.querySelector("form");
 document.getElementById("login-form").addEventListener("submit", function (e) {
   e.preventDefault();
-  let email = document.getElementById("login-email");
-  let password = document.getElementById("loginPassword");
-
-  let users = JSON.parse(localStorage.getItem("userInfo")) || [];
-
-  let userInfo = {
-    email: email.value,
-    password: password.value,
-    index: users.length + 1,
-  };
-  users = [...users, userInfo];
-  localStorage.setItem("userInfo", JSON.stringify(users));
-  email.value = "";
-  password.value = "";
-  window.location.href = "./dashboard.html";
+  validateForm();
 });
+
+function validateMail() {
+  // var loginEmail = document.getElementById("loginEmail").value;
+  // if (loginEmail.length == 0) {
+  //   emailError.innerHTML = "Email Required";
+  //   return false;
+  // }
+  // if (!loginEmail.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{3,4}$/)) {
+  //   emailError.innerHTML = "Invalid Email";
+  //   return false;
+  // }
+}
+
+function validatePassword() {
+  var loginPassword = document.getElementById("loginPassword").value;
+  if (loginPassword.length == 0) {
+    passwordError.innerHTML = "Password required";
+    return false;
+  }
+  if (loginPassword.length <= 6) {
+    passwordError.innerHTML = "Must be 6 characters or more";
+    return false;
+  }
+  passwordError.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
+function validateForm() {
+  if (!validatePassword()) {
+    submitError.innerHTML = "PLease fix above errors";
+    setTimeout(function () {
+      submitError.style.display = "none";
+    }, 2000);
+    return false;
+  } else {
+    userLogin();
+  }
+}
+
+const userLogin = async () => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const data = {
+    email: loginEmail.value,
+    password: loginPassword.value,
+  };
+  const returnedData = await axios
+    .post("http://localhost:5000/api/login", data)
+    .then((result) => {
+      localStorage.setItem("usertoken", JSON.stringify(result.data.token)),
+        next(),
+        form.reset();
+    })
+    .catch((error) => {
+      return error.response.data.message;
+    });
+  submitError.innerHTML = `${returnedData}`;
+};
+
+let next = () => {
+  window.location.href = "./dashboard.html";
+};
 
 //Signup
 
