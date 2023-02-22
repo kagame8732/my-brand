@@ -613,7 +613,7 @@ textarea.contact-form-text {
 #emailError, #passwordError,#submitError{
   font-size: 1rem;
   color: red;
-  padding: 5px;
+
 }
 
 
