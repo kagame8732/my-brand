@@ -600,7 +600,7 @@ textarea.contact-form-text {
 .contact-form-btn:hover {
   background: #051b0a;
 }
-.input-group span,#submitMessages {
+.input-group span,#submitMessages, i{
 
   bottom: 12px;
   right: 17px;
@@ -609,6 +609,11 @@ textarea.contact-form-text {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
+}
+#emailError, #passwordError,#submitError{
+  font-size: 1rem;
+  color: red;
+
 }
 
 

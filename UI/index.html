@@ -9,6 +9,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Portfolio</title>
   </head>
   <body>
@@ -268,11 +276,12 @@
               <div>
                 <input
                   type="email"
-                  id="login-email"
+                  id="loginEmail"
                   class="login-form-text-1"
                   placeholder="Email"
-                  required
+                  onkeyup="validateMail()"
                 />
+                <span id="loginError"></span>
               </div>
             </div>
             <div class="password-form">
@@ -290,6 +299,7 @@
                   id="loginPassword"
                   class="login-form-text-2"
                   placeholder="Password"
+                  onkeyup="validatePassword()"
                   required
                 />
                 <span
@@ -300,12 +310,14 @@
                     onclick="toggle('loginPassword','login-eye')"
                   ></i>
                 </span>
+                <span id="passwordError"></span>
               </div>
             </div>
             <div>
-              <button class="login-form-btn">
+              <button class="login-form-btn" onclick="return validateForm();">
                 Login<span class="btn-char">&#8594;</span>
               </button>
+              <span id="submitError"></span>
             </div>
           </form>
           <div id="error"></div>
@@ -367,7 +379,6 @@
                   id="firstName"
                   class="signup-form-text-1"
                   placeholder="First Name"
-                  required
                 />
               </div>
             </div>
@@ -385,7 +396,6 @@
                   id="lastName"
                   class="signup-form-text-1"
                   placeholder="Last Name"
-                  required
                 />
               </div>
             </div>

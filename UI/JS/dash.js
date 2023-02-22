@@ -14,10 +14,6 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
     title: title.value,
     description: description.value,
   };
-  // let data = new FormData(); // Use FormData to send the image file along with the other data
-  // data.append("title", title.value);
-  // data.append("description", description.value);
-  // data.append("image", imageFile);
 
   let requestOptions = {
     method: "POST",
