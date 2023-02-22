@@ -18,45 +18,7 @@ function toggle(elementId, eye) {
     state = true;
   }
 }
-// //Blog menu
 
-// let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
-// let blogCards = document.getElementById("blog-cards");
-
-// const blogList = blogMessages
-//   .map((item) => {
-//     const blog = `
-//     <div class="blog-card" id="blog-card">
-//   <img src="${item.image}" alt="" class="imgPreview" />
-//    <h3 class="blog-list-title" id="list-heading">${item.title}</h3>
-//     <p class="blog-list-description" id="content">${item.message}</p>
-//     <button class="readMore-btn">Read me</button>
-//     </div>
-//     `;
-//     return blog;
-//   })
-//   .join("");
-// window.addEventListener("load", function () {
-//   blogCards.innerHTML = blogList;
-// });
-
-//Other option
-let blogMessages = JSON.parse(localStorage.getItem("blogInfo")) || [];
-let blogCards = document.getElementById("blog-cards");
-
-if (blogMessages) {
-  blogMessages.forEach((blogMessage) => {
-    0;
-    blogCards.innerHTML += `
-    <div class="blog-card" id="blog-card">
-     <img src="${blogMessage.image}" alt="" class="imgPreview" />
-   <h3 class="blog-list-title" id="list-heading">${blogMessage.title}</h3>
-   <p class="blog-list-description" id="content">${blogMessage.message}</p>
-   <a href="./readMe.html" class="read-more">Read more</a>
-    </div>
-    `;
-  });
-}
 // Contact
 document
   .getElementById("contact-form")
