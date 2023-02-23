@@ -172,7 +172,7 @@ const userLogin = async () => {
     password: loginPassword.value,
   };
   const returnedData = await axios
-    .post("http://localhost:5000/api/login", data)
+    .post("https://apis-lvc4.onrender.com/api/login", data)
     .then((result) => {
       localStorage.setItem("usertoken", JSON.stringify(result.data.token)),
         next(),
@@ -215,7 +215,7 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
     redirect: "follow",
   };
 
-  fetch("http://localhost:5000/api/", requestOptions)
+  fetch("https://apis-lvc4.onrender.com/api/", requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
