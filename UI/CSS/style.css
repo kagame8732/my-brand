@@ -326,6 +326,49 @@ body {
   /* height: 35rem; */
   padding: 5rem;
 }
+.comment-form{
+  max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+   }
+
+.input-comment{
+  display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background: rgb(175, 163, 163);
+    padding: 5px 20px;
+    outline: none;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+.area-comment{
+  resize: none;
+  height: 50px;
+  width: 100%;
+  display: block;
+  border: 1;
+  
+}
+.comment-btn {
+  margin-top: .5rem;
+  padding: 5px 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: rgb(12, 163, 92);
+  color: #fff;
+  text-align: center;
+}
+.comment-btn:hover{
+  background-color: rgb(10, 240, 132);
+}
 
 .blog-heading {
   text-align: center;
@@ -495,18 +538,7 @@ textarea.blog-form-text {
   margin-top: 15px;
 }
 
-.comment-btn {
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  cursor: pointer;
-  background-color: rgb(43, 43, 202);
-  color: #fff;
-  text-align: center;
-}
+
 .read-more{
   display: inline-block;
   color: #fff;
