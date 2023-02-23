@@ -466,10 +466,6 @@ textarea.blog-form-text {
 .blog-list-description {
   text-align: center;
   font-size: 18px;
-  /* display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden; */
 }
 
 
@@ -498,16 +494,6 @@ textarea.blog-form-text {
   font-size: 15px;
   margin-top: 15px;
 }
-
-/* .comment-content {
-  height: 30px;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #aaa;
-  margin-bottom: 10px;
-  resize: none;
-  outline: none;
-} */
 
 .comment-btn {
   padding: 10px 15px;

@@ -17,7 +17,65 @@ function toggle(elementId, eye) {
     document.getElementById(eye).style.color = "#000000";
     state = true;
   }
-}
+} //List of blogs
+let blogCards = document.getElementById("blogCards");
+
+document.addEventListener("DOMContentLoaded", function () {
+  var requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  fetch("https://apis-lvc4.onrender.com/api/blogs", requestOptions)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      for (let blog of data) {
+        let card = document.createElement("div");
+        card.classList.add("blog-cards");
+        card.classList.add("card");
+        let image = document.createElement("img");
+        image.src = blog.image;
+        card.appendChild(image);
+
+        let title = document.createElement("h2");
+        title.textContent = blog.title;
+        title.classList.add("blog-list-title");
+        card.appendChild(title);
+
+        let description = document.createElement("p");
+        description.textContent = blog.description;
+        card.appendChild(description);
+
+        let btnContainer = document.createElement("div");
+        btnContainer.classList.add("btnContainer");
+
+        let likeBtn = document.createElement("Like");
+        likeBtn.textContent = "Like";
+        likeBtn.classList.add("likeBtn");
+        likeBtn.addEventListener("click", () => {});
+
+        // let updateBtn = document.createElement("button");
+        // updateBtn.textContent = "Update";
+        // updateBtn.classList.add("updateBtn");
+        // updateBtn.addEventListener("click", () => {
+        //   // Code to handle update functionality goes here
+        //   console.log(`${blog._id}`);
+        // });
+
+        btnContainer.appendChild(likeBtn);
+        // btnContainer.appendChild(updateBtn);
+        let heartIcon = document.createElement("i");
+        heartIcon.classList.add("fa-light", "fa-heart");
+
+        // Append heart icon to likeBtn
+        likeBtn.appendChild(heartIcon);
+        card.appendChild(btnContainer);
+        blogCards.appendChild(card);
+      }
+    })
+    .catch((error) => console.log("error", error));
+});
 
 // Contact
 document
@@ -157,7 +215,7 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
     redirect: "follow",
   };
 
-  fetch("http://localhost:5000/api/signup", requestOptions)
+  fetch("http://localhost:5000/api/", requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
