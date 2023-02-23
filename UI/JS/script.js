@@ -106,7 +106,7 @@ document
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/api/contacts", requestOptions)
+    fetch("https://apis-lvc4.onrender.com/api/contacts", requestOptions)
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
