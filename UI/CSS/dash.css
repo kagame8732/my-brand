@@ -7,6 +7,7 @@
 }
 
 body {
+  /* background-color: #d0d4d8; */
 }
 /* Dashboard  */
 .sidebar {
@@ -62,83 +63,7 @@ body {
   color: #207733;
   padding: 1rem;
 }
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.table td,
-.table th {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  text-align: center;
-  font-size: 1;
-}
-.table th {
-  background-color: darkblue;
-  color: #fff;
-}
-.table tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
-}
-.contact-delete,.blog-delete {
-  background-color: red;
-  color: #fff;
-  width: 4rem;
-  height: 2rem;
-  padding: 0.3rem;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  border-radius: 3px;
-}
-.contact-delete:hover,
-.blog-delete:hover{
-  background-color: rgb(212, 51, 51);
-}
-.edit-btn{
-  background-color: rgb(18, 46, 168);
-    color: #fff;
-    width: 4rem;
-    height: 2rem;
-    padding: 0.3rem;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 3px;
-}
-.edit-btn:hover{
-  background-color: rgb(41, 73, 216);
-}
 
-@media screen and (max-width: 767px) {
-  .table thead {
-    display: none;
-  }
-  .table,
-  .table tbody,
-  .table tr,
-  table td {
-    display: block;
-    width: 100%;
-  }
-  .table tr {
-    margin-bottom: 15px;
-  }
-  .table td {
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
-  }
-  .table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 100%;
-    padding-left: 15px;
-    font-weight: bold;
-    text-align: left;
-  }
-}
 /* Contact Menu */
 .contactMessages{
   display: flex;
@@ -151,6 +76,9 @@ body {
     border: none;
     cursor: pointer;
     font-size: .9rem;
+  }
+  .delete-button:hover{
+    background-color: rgb(175, 45, 45);
   }
 /* Blog */
 .blog {
@@ -257,7 +185,26 @@ textarea.blog-form-text {
   /* height: 35rem; */
   padding: 5rem;
 }
+.card {
+  /* border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 10px;
+  display: block;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  
+}
 .blog-heading {
   text-align: center;
   color: #207733;
@@ -319,35 +266,8 @@ textarea.blog-form-text {
   justify-content: center;
 }
 
-.message .success {
-  font-size: 20px;
-  position: absolute;
-  color: green;
-  animation: buttons 0.3s linear;
-  display: none;
-}
 
-.message .danger {
-  font-size: 20px;
-  position: absolute;
-  color: red;
-  animation: buttons 0.5s linear;
-  display: none;
-}
 
-@keyframes buttons {
-  0% {
-    transform: scale(0.1);
-  }
-
-  50% {
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
 
 /* Blog list  */
 .blog-list {
@@ -356,21 +276,9 @@ textarea.blog-form-text {
   padding: 5rem;
 }
 
-.imgPreview {
-  width: 50%;
-  display: block;
-  object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .blog-cards {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-columns: repeat(3 , 1fr);
-  padding: 2rem;
-  place-items: center;
-  place-content: center;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
 }
 
@@ -393,6 +301,7 @@ textarea.blog-form-text {
 }
 
 .blog-list-title {
+  display:block ;
   font-size: 25px;
   text-align: center;
   padding: 5px;
@@ -401,76 +310,8 @@ textarea.blog-form-text {
 .blog-list-description {
   text-align: center;
   font-size: 18px;
-  /* display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden; */
 }
-
-@media screen and (max-width: 995px) {
-  .blog-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2%;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .blog-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2%;
-  }
-
-  .blog-card {
-    place-self: center;
-  }
-}
-
-.comment-heading {
-  font-size: 15px;
-  margin-top: 15px;
-}
-
-.comment-content {
-  height: 30px;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #aaa;
-  margin-bottom: 10px;
-  resize: none;
-  outline: none;
-}
-
-.comment-btn {
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  cursor: pointer;
-  background-color: rgb(43, 43, 202);
-  color: #fff;
-  text-align: center;
-}
-/* Read me  */
-.readMore-btn {
-  display: inline-block;
-  color: #fff;
-  background-color: #2196f3;
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-top: 15px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-.del-edit {
-  display: flex;
-  justify-content: space-around;
-  padding: 0.5rem;
-}
+  
 #blogSubmit{
   bottom: 12px;
     right: 17px;
@@ -479,4 +320,34 @@ textarea.blog-form-text {
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
+ }
+ .btnContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
+ }
+ .deleteBtn{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: .5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+ }
+ .deleteBtn:hover{
+  background-color: rgb(153, 1, 1);
+ }
+ .updateBtn{
+  background-color: green;
+    color: white;
+    border: none;
+    padding: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+ }
+.updateBtn:hover{
+  background-color: rgb(0, 255, 0);
 }
