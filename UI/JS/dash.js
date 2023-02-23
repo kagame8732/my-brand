@@ -1,5 +1,5 @@
-const MAX_WIDTH = 300;
-const MAX_HEIGHT = 300;
+const MAX_WIDTH = 100;
+const MAX_HEIGHT = 100;
 const blogImage = document.getElementById("blogImage");
 let imageUrl;
 blogImage.addEventListener("change", function () {
@@ -63,7 +63,7 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
     redirect: "follow",
   };
 
-  fetch("https://apis-lvc4.onrender.com/api/blogs", requestOptions)
+  fetch("http://localhost:5000/api/blogs", requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
@@ -72,6 +72,8 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
 });
 
 //Get Blog
+let blogIdInput = document.getElementById("blogId");
+blogIdInput.value = blog._id;
 
 let card;
 document.addEventListener("DOMContentLoaded", function () {
@@ -80,13 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
     redirect: "follow",
   };
 
-  fetch("https://apis-lvc4.onrender.com/api/blogs", requestOptions)
+  fetch("http://localhost:5000/api/blogs", requestOptions)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       for (let blog of data) {
         card = document.createElement("div");
-        card.classList.add("blog-cards");
         card.classList.add("card");
         let image = document.createElement("img");
         image.src = blog.image;
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let description = document.createElement("p");
         description.textContent = blog.description;
+        description.classList.add("blog-description");
         card.appendChild(description);
 
         let btnContainer = document.createElement("div");
@@ -114,10 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
               redirect: "follow",
             };
 
-            fetch(
-              `https://apis-lvc4.onrender.com/api/blogs/${blog._id}`,
-              requestOptions
-            )
+            fetch(`http://localhost:5000/api/blogs/${blog._id}`, requestOptions)
               .then((response) => {
                 if (response.status === 204) {
                   console.log(blog);
@@ -132,9 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateBtn.textContent = "Update";
         updateBtn.classList.add("updateBtn");
-        updateBtn.addEventListener("click", () => {
-          console.log(blog._id);
-        });
+        updateBtn.addEventListener("click", () => {});
 
         btnContainer.appendChild(deleteBtn);
         btnContainer.appendChild(updateBtn);
@@ -147,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Contact
-const url = "https://apis-lvc4.onrender.com/api/contacts";
+const url = "http://localhost:5000/api/contacts";
 fetch(url)
   .then((response) => {
     if (response.ok) {
@@ -225,7 +222,7 @@ const deleteContact = async (id) => {
   };
   try {
     const deleteBlog = await fetch(
-      `https://apis-lvc4.onrender.com/api/contacts/${id}`,
+      `http://localhost:5000/api/contacts/${id}`,
       settings
     );
     const data = await deleteContact.json();

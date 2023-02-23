@@ -65,21 +65,21 @@ body {
 }
 
 /* Contact Menu */
-.contactMessages{
+.contactMessages {
   display: flex;
   justify-content: center;
-  }
-  .delete-button{
-    background-color: red;
-    color: white;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    font-size: .9rem;
-  }
-  .delete-button:hover{
-    background-color: rgb(175, 45, 45);
-  }
+}
+.delete-button {
+  background-color: red;
+  color: white;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.delete-button:hover {
+  background-color: rgb(175, 45, 45);
+}
 /* Blog */
 .blog {
   margin-top: 2.5rem;
@@ -186,24 +186,14 @@ textarea.blog-form-text {
   padding: 5rem;
 }
 .card {
-  /* border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  margin: 10px;
-  display: block;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-    padding: 1rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  /* border: 1px solid black; */
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 .blog-heading {
   text-align: center;
@@ -266,20 +256,11 @@ textarea.blog-form-text {
   justify-content: center;
 }
 
-
-
-
 /* Blog list  */
 .blog-list {
   width: 100%;
   /* height: 37rem; */
   padding: 5rem;
-}
-
-.blog-cards {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
 }
 
 .blog-card {
@@ -301,53 +282,64 @@ textarea.blog-form-text {
 }
 
 .blog-list-title {
-  display:block ;
+  display: block;
   font-size: 25px;
   text-align: center;
   padding: 5px;
 }
 
-.blog-list-description {
-  text-align: center;
-  font-size: 18px;
+.blog-description{
+  word-wrap: break-word;
 }
-  
-#blogSubmit{
+#blogSubmit {
   bottom: 12px;
-    right: 17px;
-    font-size: 14px;
-    color: green;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
- }
- .btnContainer{
+  right: 17px;
+  font-size: 14px;
+  color: green;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+.btnContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  /* flex-direction: row; */
+  gap: 3rem;
+  justify-content: space-between;
   padding: 1rem;
- }
- .deleteBtn{
+}
+.deleteBtn {
   background-color: red;
   color: white;
   border: none;
-  padding: .5rem;
+  padding: 0.5rem;
   cursor: pointer;
   font-size: 1rem;
   border-radius: 4px;
- }
- .deleteBtn:hover{
+}
+.deleteBtn:hover {
   background-color: rgb(153, 1, 1);
- }
- .updateBtn{
+}
+.updateBtn {
   background-color: green;
-    color: white;
-    border: none;
-    padding: .5rem;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 4px;
- }
-.updateBtn:hover{
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+.updateBtn:hover {
   background-color: rgb(0, 255, 0);
+}
+.likeBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.likeBtn:hover {
+  color: red;
 }

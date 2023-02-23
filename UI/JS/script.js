@@ -26,13 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
     redirect: "follow",
   };
 
-  fetch("https://apis-lvc4.onrender.com/api/blogs", requestOptions)
+  fetch("http://localhost:5000/api/blogs", requestOptions)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       for (let blog of data) {
         let card = document.createElement("div");
-        card.classList.add("blog-cards");
         card.classList.add("card");
         let image = document.createElement("img");
         image.src = blog.image;
@@ -47,31 +46,56 @@ document.addEventListener("DOMContentLoaded", function () {
         description.textContent = blog.description;
         card.appendChild(description);
 
+        let form = document.createElement("form"); // create form element
+        form.classList.add("comment-form");
+        card.appendChild(form); // append form to card element
+
+        let input = document.createElement("input"); // create input element
+        input.type = "text";
+        input.placeholder = "Your name";
+        input.classList.add("input-comment");
+        form.appendChild(input); // append input to form element
+
+        let textarea = document.createElement("textarea"); // create textarea element
+        textarea.placeholder = "Enter your comment"; // set placeholder text
+        textarea.classList.add("area-comment");
+        form.appendChild(textarea); // append textarea to form element
+
+        let button = document.createElement("button"); // create button element
+        button.type = "submit"; // set button type to submit
+        button.textContent = "Submit";
+        button.classList.add("comment-btn");
+        form.appendChild(button); // append button to form element
+
         let btnContainer = document.createElement("div");
         btnContainer.classList.add("btnContainer");
 
-        let likeBtn = document.createElement("Like");
-        likeBtn.textContent = "Like";
-        likeBtn.classList.add("likeBtn");
-        likeBtn.addEventListener("click", () => {});
-
-        // let updateBtn = document.createElement("button");
-        // updateBtn.textContent = "Update";
-        // updateBtn.classList.add("updateBtn");
-        // updateBtn.addEventListener("click", () => {
-        //   // Code to handle update functionality goes here
-        //   console.log(`${blog._id}`);
-        // });
-
-        btnContainer.appendChild(likeBtn);
-        // btnContainer.appendChild(updateBtn);
-        let heartIcon = document.createElement("i");
-        heartIcon.classList.add("fa-light", "fa-heart");
-
-        // Append heart icon to likeBtn
-        likeBtn.appendChild(heartIcon);
         card.appendChild(btnContainer);
         blogCards.appendChild(card);
+
+        let likeButtonContainer = document.createElement("div");
+        likeButtonContainer.classList.add("like-btn-container");
+        btnContainer.appendChild(likeButtonContainer);
+
+        let likeButton = document.createElement("button");
+        likeButton.type = "button";
+        likeButton.textContent = "Like❤️";
+        likeButton.classList.add("like-btn");
+        btnContainer.appendChild(likeButton);
+
+        // add event listener to like button
+        likeButton.addEventListener("click", function () {
+          console.log("Like button clicked!");
+        });
+
+        // add event listener to form
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // prevent default form submission
+          let comment = textarea.value;
+          let name = input.value;
+          // do something with the comment and name
+          console.log("Comment:", comment, "Name:", name);
+        });
       }
     })
     .catch((error) => console.log("error", error));
@@ -106,7 +130,7 @@ document
       redirect: "follow",
     };
 
-    fetch("https://apis-lvc4.onrender.com/api/contacts", requestOptions)
+    fetch("http://localhost:5000/api/contacts", requestOptions)
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -172,7 +196,7 @@ const userLogin = async () => {
     password: loginPassword.value,
   };
   const returnedData = await axios
-    .post("https://apis-lvc4.onrender.com/api/login", data)
+    .post("http://localhost:5000/api/login", data)
     .then((result) => {
       localStorage.setItem("usertoken", JSON.stringify(result.data.token)),
         next(),
@@ -215,7 +239,7 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
     redirect: "follow",
   };
 
-  fetch("https://apis-lvc4.onrender.com/api/", requestOptions)
+  fetch("http://localhost:5000/api/", requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
