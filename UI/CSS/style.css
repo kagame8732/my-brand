@@ -369,6 +369,12 @@ body {
 .comment-btn:hover{
   background-color: rgb(10, 240, 132);
 }
+.like-btn{
+  border: 0;
+  cursor: pointer;
+  
+
+}
 
 .blog-heading {
   text-align: center;
