@@ -63,7 +63,7 @@ document.getElementById("blog-form").addEventListener("submit", function (e) {
     redirect: "follow",
   };
 
-  fetch("http://localhost:5000/api/blogs", requestOptions)
+  fetch(`https://apis-lvc4.onrender.com/api/blogs`, requestOptions)
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     redirect: "follow",
   };
 
-  fetch("http://localhost:5000/api/blogs", requestOptions)
+  fetch(`https://apis-lvc4.onrender.com/api/blogs`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -116,7 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
               redirect: "follow",
             };
 
-            fetch(`http://localhost:5000/api/blogs/${blog._id}`, requestOptions)
+            fetch(
+              `https://apis-lvc4.onrender.com/api/blogs/${blog._id}`,
+              requestOptions
+            )
               .then((response) => {
                 if (response.status === 204) {
                   console.log(blog);
@@ -131,7 +134,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateBtn.textContent = "Update";
         updateBtn.classList.add("updateBtn");
-        updateBtn.addEventListener("click", () => {});
+        updateBtn.addEventListener("click", () => {
+          console.log(blog._id);
+        });
 
         btnContainer.appendChild(deleteBtn);
         btnContainer.appendChild(updateBtn);
@@ -144,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Contact
-const url = "http://localhost:5000/api/contacts";
+const url = `https://apis-lvc4.onrender.com/api/contacts`;
 fetch(url)
   .then((response) => {
     if (response.ok) {
@@ -222,7 +227,7 @@ const deleteContact = async (id) => {
   };
   try {
     const deleteBlog = await fetch(
-      `http://localhost:5000/api/contacts/${id}`,
+      `https://apis-lvc4.onrender.com/api/contacts/${id}`,
       settings
     );
     const data = await deleteContact.json();
